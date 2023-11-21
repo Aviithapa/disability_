@@ -1,0 +1,9 @@
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/all.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lightcase.js') }}"></script>
+    <script src="{{ asset('assets/js/purecounter_vanilla.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
