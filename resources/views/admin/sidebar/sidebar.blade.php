@@ -7,10 +7,10 @@
                         <!-- Logo light -->
                         <a href="{{ url('dashboard') }}" class="logo-light">
                             <span class="logo-lg">
-                                <img src="{{asset ('images/logo.png') }}" alt="logo">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                             </span>
                             <span class="logo-sm">
-                                <img src="{{asset ('images/logo.png') }}" alt="small logo">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="small logo">
                             </span>
                         </a>
                     </div>
@@ -40,7 +40,7 @@
                         <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button"
                             aria-haspopup="false" aria-expanded="false">
                             <span class="account-user-avatar">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="user-image" width="32" class="rounded-circle">
                             </span>
                             <span class="d-lg-block d-none">
                                 <h5 class="my-0 fw-normal">{{ Auth::user()->name }} <i
@@ -53,31 +53,6 @@
                                 <h6 class="text-overflow m-0">Welcome !</h6>
                             </div>
 
-                            {{-- <!-- item-->
-                            <a href="pages-profile.html" class="dropdown-item">
-                                <i class="ri-account-circle-line fs-18 align-middle me-1"></i>
-                                <span>My Account</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="pages-profile.html" class="dropdown-item">
-                                <i class="ri-settings-4-line fs-18 align-middle me-1"></i>
-                                <span>Settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="pages-faq.html" class="dropdown-item">
-                                <i class="ri-customer-service-2-line fs-18 align-middle me-1"></i>
-                                <span>Support</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="auth-lock-screen.html" class="dropdown-item">
-                                <i class="ri-lock-password-line fs-18 align-middle me-1"></i>
-                                <span>Lock Screen</span>
-                            </a> --}}
-
-                            <!-- item-->
                             <a href="{{ route('logout') }}" class="dropdown-item">
                                 <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                                 <span>Logout</span>
@@ -91,21 +66,21 @@
     <div class="leftside-menu">
 
             <!-- Brand Logo Dark -->
-            <a href="{{ url('dashboard') }}" class="logo logo-dark" style="height: 120px; margin-top: -10px;">
+            <a href="{{ url('dashboard') }}" class="logo logo-dark" style="height: 120px; margin-top: 10px;">
                 <span class="logo-lg">
-                    <img src="{{asset ('images/logo.png') }}" alt="dark logo" style="height: 100%; width: 100px;">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="dark logo" style="height: 100%; width: 100px;">
                 </span>
                 <span class="logo-sm">
-                    <img src="{{asset ('images/logo.png') }}" alt="small logo">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="small logo">
                 </span>
             </a>
 
             <!-- Sidebar -left -->
-            <div class="h-100" id="leftside-menu-container" data-simplebar style="border-top: 1px solid;">
+            <div class="h-100" id="leftside-menu-container" data-simplebar>
                 <!--- Sidemenu -->
                 <ul class="side-nav">
 
-                    {{-- <li class="side-nav-title">Main</li> --}}
+                    <li class="side-nav-title">Main</li>
 
                     <li class="side-nav-item">
                         <a href="{{ url('dashboard') }}" class="side-nav-link">
@@ -157,6 +132,13 @@
                         <a href="{{ route('user.index') }}" class="side-nav-link">
                             <i class="bi-person"></i>
                             <span> Users </span>
+                        </a>
+                    </li>
+
+                      <li class="side-nav-item">
+                        <a href="{{ route('employee.index') }}" class="side-nav-link">
+                            <i class="bi-person"></i>
+                            <span> Employee </span>
                         </a>
                     </li>
                   

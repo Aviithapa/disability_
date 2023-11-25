@@ -29,12 +29,8 @@ class HomeController extends BaseController
         $slug = $slug ? $slug : 'index';
         $file_path = resource_path() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'website/pages' . DIRECTORY_SEPARATOR . $slug . '.blade.php';
         if (file_exists($file_path)) {
-            // switch ($slug) {
-            //     case 'index':
 
-            //         break;
-            // }
-            return view('website.pages.' . $slug);
+            return view('website.pages.login');
         }
         return view('website.pages.404');
     }

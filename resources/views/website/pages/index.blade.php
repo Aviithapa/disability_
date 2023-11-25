@@ -15,48 +15,9 @@
             <h1>Weaving Legacies, Connecting Lives</h1>
             <h3>Your Community, Your Story, Our Tapestry</h3>
             <div class="banner__bottom">
-              {{-- <ul
-                class="countdown justify-content-center"
-                data-date="July 25, 2023 21:14:01"
-                id="countdown"
-              >
-                <li class="countdown__item">
-                  <h3
-                    class="countdown__number color--theme-color countdown__number-days"
-                  >
-                    99
-                  </h3>
-                  <p class="countdown__text">Days</p>
-                </li>
-                <li class="countdown__item">
-                  <h3
-                    class="countdown__number color--theme-color countdown__number-hours"
-                  >
-                    18
-                  </h3>
-                  <p class="countdown__text">Hours</p>
-                </li>
-                <li class="countdown__item">
-                  <h3
-                    class="countdown__number color--theme-color countdown__number-minutes"
-                  >
-                    44
-                  </h3>
-                  <p class="countdown__text">Min</p>
-                </li>
-                <li class="countdown__item">
-                  <h3
-                    class="countdown__number color--theme-color countdown__number-seconds"
-                  >
-                    36
-                  </h3>
-                  <p class="countdown__text">Sec</p>
-                </li>
-              </ul> --}}
+             
             </div>
-            <a href="{{ url('/join') }}" class="default-btn move-right"
-              ><span>Join Now <i class="fa-solid fa-arrow-right"></i></span>
-            </a>
+          
           </div>
         </div>
       </div>
@@ -85,16 +46,16 @@
               </div>
               <div class="col-lg-3 col-sm-6">
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
-                  placeholder="example@gmail.com"
+                  placeholder="YYYY-MM-DD"
                 />
               </div>
               <div class="col-lg-3 col-sm-6">
                 <a
                   href="signup.html"
                   class="default-btn default-btn--secondary move-right"
-                  ><span>Register <i class="fa-solid fa-arrow-right"></i></span
+                  ><span>Search <i class="fa-solid fa-arrow-right"></i></span
                 ></a>
               </div>
             </div>

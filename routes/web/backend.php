@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DisabilityGroupController;
 use App\Http\Controllers\Admin\DisabilityTypeController;
+use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\PrintController;
+use App\Http\Controllers\Admin\QRCodeController;
 use App\Http\Controllers\Admin\UserController;
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
@@ -29,6 +31,7 @@ Route::middleware(['auth'])->group(
         Route::get('/dashboard/disability-group/create', [DisabilityGroupController::class, 'show'])->name('disability-group.create');
         Route::get('/dashboard/edit/disability-group/{id}', [DisabilityGroupController::class, 'edit'])->name('disability-group.edit');
         Route::post('/admin/approve/{id}', [AdminController::class, 'updateAdmin'])->name('admin.approve');
+        Route::resource('/dashboard/employee', EmployeeController::class);
     }
 );
 

@@ -58,7 +58,7 @@
                                             <td>{{ $item->name_nepali }}</td>
                                             <td>{{ $item->name_english }}</td>
                                             <td>{{ $item->color }}</td>
-                                            <td><a href="{{ url('dashboard/edit/disability-group/'.$item->id) }}" title="edit"><span class="label label-danger"><i class="fa fa-pencil"></i></span></a></td>
+                                            <td><a href="{{ url('dashboard/edit/disability-group/'.$item->id) }}" title="edit"><span class="label label-danger"><i class="bi-pencil"></i></span></a></td>
                                           </tr>
                                           @endforeach
 

@@ -8,7 +8,6 @@ use Throwable;
 
 class Handler extends ExceptionHandler
 {
-    use ExceptionResponder;
     /**
      * A list of exception types with their corresponding custom log levels.
      *
@@ -46,10 +45,5 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
-    }
-
-    public function render($request, Throwable $e)
-    {
-        return $this->respondWithJson($request, $e);
     }
 }

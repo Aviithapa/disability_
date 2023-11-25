@@ -32,7 +32,7 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12"> 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Name</label>
-                                                    <input type="text" class="form-control" placeholder="Name" name="name"  required value={{ isset($model) ? $model->username :old('name') }}>
+                                                    <input type="text" class="form-control" placeholder="Name" name="name"  required value="{{ isset($model) ? $model->username :old('name') }}">
                                                       @if($errors->any())
                                                          {{ $errors->first('name') }}
                                                       @endif
@@ -41,7 +41,7 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Email </label>
-                                                    <input type="email" class="form-control" id="validationCustom01" placeholder="email" name="email"  required value={{ isset($model) ? $model->email : old('email') }}>
+                                                    <input type="email" class="form-control" id="validationCustom01" placeholder="email" name="email"  required value="{{ isset($model) ? $model->email : old('email') }}">
                                                      @if($errors->any())
                                                          {{ $errors->first('email') }}
                                                       @endif
@@ -50,7 +50,7 @@
                                               <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Password </label>
-                                                    <input type="password" class="form-control" id="validationCustom01" placeholder="Password" name="password"  required value={{ isset($model) ? $model->password : old('password') }}>
+                                                    <input type="password" class="form-control" id="validationCustom01" placeholder="Password" name="password"  required value="{{ isset($model) ? $model->password : old('password') }}">
                                                      @if($errors->any())
                                                          {{ $errors->first('password') }}
                                                       @endif

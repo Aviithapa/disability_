@@ -3,7 +3,7 @@
 @section('content')
  <style type="text/css" media="print">
         @page {
-            size: auto; /* Default page size */
+            size: A4; /* Default page size */
             margin: 0; /* No margin for the page */
         }
         body {
@@ -13,10 +13,12 @@
         .print-section {
             margin: 20px;
             background: #ffffff;
+           
             /* Define the styles for the section you want to print */
             /* You can hide other elements by setting display: none; */
         }
         .a4-size {
+            size:A4;
             width: 210mm; /* A4 width in millimeters */
             height: 297mm; /* A4 height in millimeters */
             margin: 0 auto; /* Center the content on the page */
@@ -65,6 +67,11 @@
     .main-footer{
         display: none; /* Hide the row by default */
     }
+     .page {
+      width: 21cm; /* A4 width */
+      height: 14.85cm; /* A4 height */
+      page-break-after: always; /* Force a new page after each page */
+    }
   </style>   
   <style>
    .id-card {
@@ -112,7 +119,7 @@
   </style>   
 
 
- <div class="content-wrapper print-section">
+ <div class="content-wrapper print-section" style="background: #fff;">
     <!-- Content Header (Page header) -->
    
 
@@ -127,10 +134,10 @@
                            </div>
                            <!-- /.box-header -->
                            <div class="box-body mt-5">
-                              <div class="nepali-card a4-size id-card" style="padding:0px;">
+                              <div class="nepali-card a4-size id-card page" style="padding:0px;">
                                   <div class="row">
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
-                                             <img src="{{asset('dist/img/logo-n-blue.png')}}" alt="" height="40" />
+                                             <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
                                         <div class="col-lg-6 fs-10">
                                             <div class="text-center b-600">
@@ -177,21 +184,14 @@
                                             <span>बाबु/आमा वा संरक्षकको नाम :- <span style="font-weight: 700">{{ $applicant->guardian }}</span></span><br>
                                      
                                         </div>
-                                        {{-- <div class="col-lg-9 mt-2">
-                                            <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span><br>
-                                            <span> हस्ताक्षर :- </span><br>
-                                            <span> नाम,थर : - </span><br>
-                                            <span> पद :- </span><br>
-                                            <span>  मिति :- </span><br>
-                                        </div> --}}
                                         <div class="col-lg-3 mt-2"></div>
                                     </div>
                              </div>
 
-                              <div class="nepali-card a4-size id-card mt-5">
+                              <div class="nepali-card a4-size id-card mt-5 page">
                                   <div class="row">
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
-                                             <img src="{{asset('dist/img/logo-n-blue.png')}}" alt="" height="40" />
+                                             <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
                                         <div class="col-lg-6 fs-10">
                                             <div class="text-center b-600">
@@ -202,7 +202,7 @@
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="img-container">
-                                                <img src="{{ $applicant->getProfileImage() }}">
+                                                {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(40)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
                                             </div>
                                         </div>
                                         <div class="col-lg-12" style="padding: 0px 69px;">

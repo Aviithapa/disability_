@@ -3,8 +3,8 @@
         <div class="container">
           <div class="header-wrapper">
             <div class="logo">
-              <a href="index.html">
-                <h2>PandeyConnect</h2>
+              <a href="{{ url('/') }}">
+                <h2>Disability</h2>
               </a>
             </div>
             <div class="menu-area">
@@ -13,25 +13,10 @@
                   <a href="{{ url('/') }}">Home</a>
                 
                 </li>
-
-                <li>
-                  <a href="#about">About</a>
-                
-                </li>
-                <li>
-                  <a href="#team">Blog</a>
-                 
-                </li>
-                <li>
-                  <a href="#faq">Pages</a>
-                </li>
-                <li>
-                  <a href="#contact">Contact</a>
-                </li>
               </ul>
               <div class="header-btn">
-                <a href="{{ url('/join') }}" class="default-btn move-right">
-                  <span>Join Now <i class="fa-solid fa-arrow-right"></i></span>
+                <a href="{{ url('/login') }}" class="default-btn move-right">
+                  <span>Login  <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
               </div>
 

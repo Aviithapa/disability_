@@ -5,17 +5,13 @@
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
-        <h1>Dashboard</h1>
-        <ol class="breadcrumb">
-            <li><a href="#">Dashboard</a></li>
-            <li><i class="fa fa-angle-right"></i>Detail Count</li>
-        </ol>
+      <h2> Data Count </h2>
     </div>
 
     <div class="content">
         <div class="row">
             @foreach($countsByCategory as $count)
-                <div class="col-lg-3 col-xs-6 m-b-3">
+                <div class="col-lg-3 col-xs-6 m-b-3" style="margin-top: 5px;">
                     <div className="card widget-flat " style = "background : {{ isset($count->color) ? $count->color : 'white' }}; color : {{ isset($count->color) ? 'white' : 'black' }}; padding:10px ">
                     <div className="card-body">
                     <div className="float-end">
@@ -36,7 +32,7 @@
             @endforeach
 
             @foreach($natureOfDisability as $count)
-                <div class="col-lg-3 col-xs-6 m-b-3">
+                <div class="col-lg-3 col-xs-6 m-b-3" style="margin-top: 5px;">
                     <div className="card widget-flat " style = "background : {{ isset($count->color) ? $count->color : 'white' }}; color : {{ isset($count->color) ? 'white' : 'black' }}; padding:10px ">
                     <div className="card-body">
                     <div className="float-end">
