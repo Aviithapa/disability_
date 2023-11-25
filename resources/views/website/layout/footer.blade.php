@@ -1,4 +1,4 @@
- <footer
+ {{-- <footer
       class="footer"
       style="background-image: url(assets/images/footer/bg.png)"
     >
@@ -45,4 +45,4 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> --}}

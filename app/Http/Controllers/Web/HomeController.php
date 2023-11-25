@@ -30,7 +30,7 @@ class HomeController extends BaseController
         $file_path = resource_path() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'website/pages' . DIRECTORY_SEPARATOR . $slug . '.blade.php';
         if (file_exists($file_path)) {
 
-            return view('website.pages.login');
+            return view('auth.login');
         }
         return view('website.pages.404');
     }

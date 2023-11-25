@@ -5,7 +5,7 @@
    
 
     <!-- ================> Page header start here <================== -->
-    <section class="page-header bg--cover" style="background-image: url(assets/images/header/bg.jpg);">
+    <section class="page-header bg--cover" style="background-image: url('{{ asset('assets/images/disability.jpeg') }}');">
         <div class="container">
             <div class="page-header__content text-center">
                 <h2 class="text-uppercase">Sign In</h2>
@@ -44,10 +44,10 @@
                             <div class="form-group">
                                 <div class="d-flex justify-content-between flex-wrap pt-sm-2">
                                     <div class="checkgroup">
-                                        <input type="checkbox" name="remember" id="remember">
-                                        <label for="remember">Remember Me</label>
+                                        {{-- <input type="checkbox" name="remember" id="remember">
+                                        <label for="remember">Remember Me</label> --}}
                                     </div>
-                                    <a href="forgot-pass.html">Forgot Password?</a>
+                                    {{-- <a href="forgot-pass.html">Forgot Password?</a> --}}
                                 </div>
                             </div>
                             <div class="form-group">
@@ -55,15 +55,15 @@
                             </div>
                         </form>
                         <div class="account-bottom">
-                            <p class="d-block cate pt-10">Don’t Have any Account? <a href="signup.html"> Sign
-                                    Up</a></p>
+                            {{-- <p class="d-block cate pt-10">Don’t Have any Account? <a href="signup.html"> Sign
+                                    Up</a></p> --}}
 
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="account-img">
-                        <img src="assets/images/account/sign-in.png" alt="shape-image">
+                        <img src="{{  asset('assets/images/disability-login.jpeg') }}" alt="shape-image">
                     </div>
                 </div>
             </div>
