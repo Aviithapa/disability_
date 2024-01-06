@@ -10,7 +10,6 @@ use App\Http\Controllers\Admin\DisabilityGroupController;
 use App\Http\Controllers\Admin\DisabilityTypeController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\PrintController;
-use App\Http\Controllers\Admin\QRCodeController;
 use App\Http\Controllers\Admin\UserController;
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');

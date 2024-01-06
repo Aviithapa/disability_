@@ -11,7 +11,7 @@
             background: white;
         }
         .print-section {
-            margin: 20px;
+            margin: 0px;
             background: #ffffff;
            
             /* Define the styles for the section you want to print */
