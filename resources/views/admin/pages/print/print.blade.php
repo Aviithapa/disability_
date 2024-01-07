@@ -36,6 +36,9 @@
     .fs-10{
         font-size: 10px;
     }
+      .fs-8{
+        font-size: 8px;
+    }
 
     .fs-12{
         font-size: 12px;
@@ -86,6 +89,10 @@
 .fs-10{
     font-size: 10px;
 }
+
+.fs-8{
+        font-size: 8px;
+    }
 
 .fs-12{
     font-size: 12px;
@@ -141,7 +148,7 @@
                                              <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
                                         <div class="col-lg-6 fs-10">
-                                            <div class="text-center b-600">
+                                            <div class="text-center b-600"  style="color: red;">
                                                 <span>प्रदेश सरकार</span>
                                                 <br>सुदूरपश्चिम प्रदेश
                                                 <br>दशरथचन्द नगरपालिका बैतडी
@@ -175,7 +182,12 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6">
-                                                    <span>लिङ्ग : <span style="font-weight: 700">{{ $applicant->sex }}</span></span>
+                                                   <span>लिङ्ग : <span style="font-weight: 700">
+                                                      {{ 
+                                                        $applicant->sex === "male" ? "पुरुष" : 
+                                                        ($applicant->sex === "female" ? "महिला" : "अन्य")
+                                                    }}
+                                                    </span></span>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <span>रक्त समूह : <span style="font-weight: 700">{{ $applicant->blood_group }}</span></span><br>
@@ -194,11 +206,11 @@
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
                                              <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
-                                        <div class="col-lg-6 fs-10">
-                                            <div class="text-center b-600">
-                                                <span>प्रदेश सरकार</span>
-                                                <br>सुदूरपश्चिम प्रदेश
-                                                <br>दशरथचन्द नगरपालिका बैतडी
+                                        <div class="col-lg-6 fs-8">
+                                            <div class="text-center b-600" style="color: red;">
+                                                <span>Province Government </span>
+                                                <br>Sudurpaschim Pardesh
+                                                <br>Dasharathchand Municipality, Baitadi
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
@@ -215,14 +227,8 @@
                                         <div class="col-lg-12 fs-10">
                                             <span>Card Number:- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span>
                                             <br>
-                                            <div class="row">
-                                                 <div class="col-lg-6">
-                                                      <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span>
-                                                </div>
-                                            </div>
+                                            <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span>
+                                            <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span>
                                             <span>severity of disability :  <span style="font-weight: 700">{{ $applicant->disability->name_english }}</span> nature of disability:- <span style="font-weight: 700">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
                                            
                                      
