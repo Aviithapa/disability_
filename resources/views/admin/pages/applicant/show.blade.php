@@ -237,8 +237,21 @@
 
                                             <!-- settings -->
                                             <div id="edit-profile" class="tab-pane">
-                                                <div class="user-profile-content">
-                                                     <form class="form-horizontal form-material" action="{{ url('/admin/approve/' . $data->id) }}" method="POST">
+                                                @if($data->disability_type_id && $data->incapacitated_base_disability_type_id && $data->decision_image)
+                                                <span>अपाङ्गताको किसिम : प्रकृतिको आधारमा <span style="font-weight: 700">{{ $data->disability->name_nepali }}</span> गम्भीरता:- <span style="font-weight: 700">{{ $data->disabilitySeverity->name_nepali }}</span></span><br>
+                                                <span>severity of disability :  <span style="font-weight: 700">{{ $data->disability->name_english }}</span> nature of disability:- <span style="font-weight: 700">{{ $data->disabilitySeverity->name_english }}</span></span><br>
+
+                                                <span> Decision Image / PDf</span> <br /> <br/>
+                                                    @if (pathinfo($data->getDecisionPhoto(), PATHINFO_EXTENSION) === 'pdf')
+                                                                <a href="{{ $data->getDecisionPhoto() }}" target="_blank">
+                                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                </a>
+                                                            @else
+                                                                <img style="cursor: pointer;" src="{{ $data->getDecisionPhoto() }}" onclick="onClick(this)" alt="Ward Recommendation" width="200" height="200">
+                                                            @endif
+                                                @else
+                                          <div class="user-profile-content">
+                                              <form class="form-horizontal form-material" action="{{ url('/admin/approve/' . $data->id) }}" method="POST">
                                                     @csrf
 
                                                     <input type="hidden" name="profile_id" value="{{$data->id}}">
@@ -333,6 +346,7 @@
                                                 </form>
                                                    
                                                 </div>
+                                                @endif
                                             </div>
 
                                           

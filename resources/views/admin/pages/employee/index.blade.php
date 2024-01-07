@@ -62,7 +62,7 @@
                                                     <td>{{ $item->phone_number }}</td>
                                                     <td>{{ $item->status }}</td>
                                                     <td> <img src="{{ $item->getProfileImage() }}" alt="Profile Image" height="60"/>
-                                                    <td><a href="{{ url('dashboard/edit/disability-type/'.$item->id) }}" title="edit"><span class="label label-danger"><i class="bi-pencil"></i></span></a></td>
+                                                    <td><a href="{{ url('dashboard/employee/'.$item->id. '/edit') }}" title="edit"><span class="label label-danger"><i class="bi-pencil"></i></span></a></td>
                                                 </tr>
                                                 @endforeach
 

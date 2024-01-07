@@ -159,7 +159,7 @@
                                         </div>
                                        
                                         <div class="col-lg-12 fs-10">
-                                            <span>परिचयपत्र नं :- <span style="font-weight: 700; text-transform: uppercase;">{{ $applicant->IdNumber }}</span></span>
+                                            <span>परिचयपत्र नं :- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span>
                                             <br>
                                             <span>नाम,थर :- <span style="font-weight: 700">{{ $applicant->full_name_nep }} </span></span>
                                             <br>
@@ -213,7 +213,7 @@
                                         </div>
                                        
                                         <div class="col-lg-12 fs-10">
-                                            <span>Card Number:- <span style="font-weight: 700; text-transform: uppercase;">{{ $applicant->IdNumber }}</span></span>
+                                            <span>Card Number:- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span>
                                             <br>
                                             <div class="row">
                                                  <div class="col-lg-6">
