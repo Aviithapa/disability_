@@ -146,6 +146,7 @@
                       <a href="{{ route('logout') }}" class="side-nav-link">
                                 <i class="bi-box-arrow-right"></i>
                                 <span>Logout</span>
+                      </a>
                         </li>
                   
                 </ul>
