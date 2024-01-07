@@ -229,12 +229,12 @@
                                         </div>
                                         <div class="col-lg-7 mt-2 fs-10">
                                             <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span><br>
-                                            <span> हस्ताक्षर :- <img src="{{ $employee->getRedSignatureImage() }}" height="20px"  /></span><br>
+                                            <span> हस्ताक्षर :- <img src="{{ isset($employee) ?  $employee->getRedSignatureImage() : "" }}"  alt="red-signature" height="20px"  /></span><br>
                                             <span> नाम,थर : - {{ $employee->name_nepali }}</span><br>
                                             <span> पद :- {{ $employee->designation }}</span><br>
                                         </div>
                                         <div class="col-lg-5 mt-2">
-                                            <img src="{{ $employee->getStampImage() }}"  height="50" />
+                                            <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                         </div>
                                     </div>
                              </div>
@@ -264,12 +264,12 @@
 
    <script>
         // Wait for the DOM to be ready
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     // Find the "Print" button by its ID
-        //     window.onload = function () {
-        //         window.print();
-        //     };
-        // });
+        document.addEventListener("DOMContentLoaded", function () {
+            // Find the "Print" button by its ID
+            window.onload = function () {
+                window.print();
+            };
+        });
     </script>
 
 @endpush
