@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Employee;
 use App\Repositories\Applicant\ApplicantRepository;
 use App\Repositories\DisabilityType\DisabilityTypeRepository;
 use App\Repositories\Log\LogRepository;
@@ -62,7 +63,8 @@ class PrintController extends BaseController
     public function show($id)
     {
         $applicant = $this->applicantRepository->find($id);
-        return view('admin.pages.print.print', compact('applicant'));
+        $employee = Employee::all()->where('status', 'active')->first();
+        return view('admin.pages.print.print', compact('applicant', 'employee'));
     }
 
     /**

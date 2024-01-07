@@ -169,18 +169,44 @@
                                                     <h5 class="mt-4 fs-17 text-dark">Images</h5>
 
                                                     <div class="mt-4 flex justify-between" style="    justify-content: space-between; display: flex;">
-                                                        <td > 
-                                                             <img style="cursor: pointer;" src="{{ $data->getCitizenshipImage() }}" onclick="onClick(this)" alt="citizenship front image" width="200" height="200">
-                                                       
+                                                       <td> 
+                                                            @if (pathinfo($data->getCitizenshipImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                <a href="{{ $data->getCitizenshipImage() }}" target="_blank">
+                                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                </a>
+                                                            @else
+                                                                <img style="cursor: pointer;" src="{{ $data->getCitizenshipImage() }}" onclick="onClick(this)" alt="Citizenship Front Image" width="200" height="200">
+                                                            @endif
                                                         </td>
-                                                        <td > 
-                                                             <img style="cursor: pointer;" src="{{  $data->getFullSizeImage() }}" onclick="onClick(this)" alt="Full Size Image"  width="200" height="200">
-                                                        </td>
+
                                                         <td> 
-                                                             <img style="cursor: pointer;" src="{{ $data->getHealthExaminationImage() }}" onclick="onClick(this)" alt="Doctor Report"  width="200" height="200">
+                                                            @if (pathinfo($data->getFullSizeImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                <a href="{{ $data->getFullSizeImage() }}" target="_blank">
+                                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                </a>
+                                                            @else
+                                                                <img style="cursor: pointer;" src="{{ $data->getFullSizeImage() }}" onclick="onClick(this)" alt="Full Size Image" width="200" height="200">
+                                                            @endif
                                                         </td>
-                                                         <td>  
-                                                            <img style="cursor: pointer;" src="{{ $data->getWardRecommendationImage() }}" onclick="onClick(this)" alt="Ward Recomendation"  width="200" height="200">
+
+                                                        <td> 
+                                                            @if (pathinfo($data->getHealthExaminationImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                <a href="{{ $data->getHealthExaminationImage() }}" target="_blank">
+                                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                </a>
+                                                            @else
+                                                                <img style="cursor: pointer;" src="{{ $data->getHealthExaminationImage() }}" onclick="onClick(this)" alt="Doctor Report" width="200" height="200">
+                                                            @endif
+                                                        </td>
+
+                                                        <td>  
+                                                            @if (pathinfo($data->getWardRecommendationImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                <a href="{{ $data->getWardRecommendationImage() }}" target="_blank">
+                                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                </a>
+                                                            @else
+                                                                <img style="cursor: pointer;" src="{{ $data->getWardRecommendationImage() }}" onclick="onClick(this)" alt="Ward Recommendation" width="200" height="200">
+                                                            @endif
                                                         </td>
                                                     </div>
                                                          
@@ -204,18 +230,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                            {{-- <tr
-                                                             @if($profile_log->status ==='rejected')
-                                                                style='color: red;' 
-                                                                @endif
-                                                             >
-                                                            
-                                                                <td style="text-transform: capitalize;">{{$profile_log->status}}</td>
-                                                                <td></td>
-                                                                <td>{{$profile_log->created_at->toDateString()}}</td>
-                                                              <td></td>
-                                                                <td>{{$profile_log->getUserName()}}</td>
-                                                            </tr> --}}
+                        
                                                         @endforeach
                                                         </div>
                                             </div>
