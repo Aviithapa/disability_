@@ -227,13 +227,12 @@
                                         <div class="col-lg-12 fs-10">
                                             <span>Card Number:- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span>
                                             <br>
-                                            <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span>
-                                            <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span>
+                                            <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span> <br />
+                                            <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span> <br />
                                             <span>severity of disability :  <span style="font-weight: 700">{{ $applicant->disability->name_english }}</span> nature of disability:- <span style="font-weight: 700">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
-                                           
-                                     
+                                
                                         </div>
-                                        <div class="col-lg-7 mt-2 fs-10">
+                                        <div class="col-lg-7 fs-10">
                                             <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span><br>
                                             @if(isset($employee))
                                             <span> हस्ताक्षर :- <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /></span><br>
