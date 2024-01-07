@@ -229,13 +229,16 @@
                                         </div>
                                         <div class="col-lg-7 mt-2 fs-10">
                                             <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span><br>
-                                            <span> हस्ताक्षर :- <img src="{{ isset($employee) ?  $employee->getRedSignatureImage() : "" }}"  alt="red-signature" height="20px"  /></span><br>
+                                            @if(isset($employee))
+                                            <span> हस्ताक्षर :- <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /></span><br>
                                             <span> नाम,थर : - {{ $employee->name_nepali }}</span><br>
                                             <span> पद :- {{ $employee->designation }}</span><br>
+                                          
                                         </div>
                                         <div class="col-lg-5 mt-2">
                                             <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                         </div>
+                                          @endif
                                     </div>
                              </div>
                            </div>
