@@ -128,7 +128,7 @@ class ApplicantController extends BaseController
             }
             $data = [
                 'state' => 'admin',
-                'status' => 'updated',
+                'status' => 'approved',
                 'created_by' => Auth::user()->id,
                 'remarks' => 'Applicant Updated Successfully',
                 'applicant_id' => $id

@@ -27,6 +27,7 @@ class PrintController extends BaseController
      */
     public function index(Request $request)
     {
+        $request['status'] = 'approved';
         $applicant = $this->applicantRepository->getPaginatedList($request);
         $disability_types = $this->disabilityTypeRepository->all()->where('type', 'nature_of_disability');
         $severity_types = $this->disabilityTypeRepository->all()->where('type', 'severity_of_disability');

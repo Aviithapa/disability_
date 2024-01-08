@@ -31,8 +31,9 @@
                                 <div class="card-body">
                         
                                    
-                                    <form method="POST" action="{{ url('form') }}" style="padding:20px;">
+                                    <form method="POST" action="{{ route('applicant.update', ['applicant' => $data->id]) }}" style="padding:20px;">
                                         @csrf
+                                        @method('PUT')
                     
                                          <div class="row" style="display: flex; justify-content:space-between;">
                                               <div class="col-lg-6">
@@ -66,7 +67,7 @@
                                                                 <input type="file" id="transcript_tslc_image" name="transcript_tslc_image"
                                                                        onclick="anyFileUploader('transcript_tslc')">
                                                                 <input type="hidden" id="transcript_tslc_path" name="transcript_tslc" class="form-control"
-                                                                       value="{{isset($data)?$data->transcript_image:''}}"/>
+                                                                       value="{{isset($data)?$data->photo:''}}"/>
                                                                 {!! $errors->first('image', '<div class="text-danger">:message</div>') !!}
                                                             </div>
                                                         </div>
@@ -91,8 +92,8 @@
                                             <div class="col-lg-4">
                                                 <fieldset class="form-group">
                                                     <label>लिङ्ग</label>
-                                                    <select class="form-control" name="sex" value="{{ $data->sex }}"required>
-                                                        <option value="">Select Gender</option>
+                                                    <select class="form-control" name="sex" required>
+                                                        <option value="{{ $data->sex }}">{{ $data->sex }}</option>
                                                         <option value="male">Male</option>
                                                         <option value="female">Female</option>
                                                         <option value="other">Other</option>
@@ -210,8 +211,8 @@
                                             <div class="col-lg-12">
                                                 <fieldset class="form-group">
                                                     <label>सहायक सामग्री प्रयोग गर्नुपर्ने आवश्यकता भएको/नभएकोः (उपयुक्त स्थानमा चिनो लगाउनुहोस्)</label>
-                                                    <select class="form-control" name="material_used"  value="{{ $data->material_used }}" required>
-                                                        <option value="">Select Material Used</option>
+                                                    <select class="form-control" name="material_used">
+                                                        <option value="{{ $data->material_used }}">{{ $data->material_used }}</option>
                                                         <option value="Yes">Yes</option>
                                                         <option value="No">No</option>
                                                     </select>
@@ -226,8 +227,8 @@
                                             <div class="col-lg-12">
                                                 <fieldset class="form-group">
                                                     <label>सहायक सामग्रीको प्रयोग गर्ने गरेको/नगरेकोः (उपयुक्त स्थानमा चिनो लगाउनुहोस्)</label>
-                                                    <select class="form-control" name="already_material_used" id='material_used' onchange="materialUsed()" required value="{{ $data->already_material_used }}">
-                                                        <option value="">Select Already Material Used</option>
+                                                    <select class="form-control" name="already_material_used" id='material_used' onchange="materialUsed()">
+                                                        <option value="{{ $data->already_material_used }}">{{ $data->already_material_used }}</option>
                                                         <option value="Yes">Yes</option>
                                                         <option value="No">No</option>
                                                     </select>
@@ -254,11 +255,8 @@
                                             <div class="col-lg-12">
                                                 <fieldset class="form-group">
                                                     <label>शैक्षिक योग्यता</label>
-                                                    <select class="form-control" name="education_level" value="{{ $data->education_level }}" required>
-                                                        <option value="">Select Education Level</option>
-                                                        <option value="Yes">Yes</option>
-                                                        <option value="No">No</option>
-                                                    </select>
+                                                    <input class="form-control" name="education_level" value="{{ $data->education_level }}"/>
+                                                       
                                                 </fieldset>
                                             </div>
                                             <div class="col-lg-12">

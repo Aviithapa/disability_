@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(
     }
 );
 
-Route::post('/save_image/{id?}', [ApplicantController::class, 'save_image'])->middleware(['auth'])->name('save_image');
+Route::match(['post', 'put'], '/save_image/{id?}', [ApplicantController::class, 'save_image'])->middleware(['auth'])->name('save_image');
 Route::match(['get', 'post'], '/dashboard/index', [AdminController::class, 'index'])->middleware(['auth'])->name('applicantData');
 Route::get('/dashboard/generateNumber/{id}', [AdminController::class, 'generateCardNumber'])->middleware(['auth'])->name('generateCardNumber');
 Route::match(['get', 'post'], '/dashboard/printIndex', [AdminController::class, 'printIndex'])->middleware(['auth'])->name('printIndex');
