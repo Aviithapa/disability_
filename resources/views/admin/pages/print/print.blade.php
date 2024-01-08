@@ -25,7 +25,7 @@
         .a4-size {
             size: A4 landscape;
             width: 210mm; /* A4 width in millimeters */
-            height: 297mm; /* A4 height in millimeters */
+            height: 310mm; /* A4 height in millimeters */
             margin: 0 auto; /* Center the content on the page */
             background-color: white; /* Optional: set a background color */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a box shadow */
@@ -105,7 +105,7 @@
   </style>   
   <style>
    .id-card {
-    width: 85.6mm;
+    width: 90mm;
     height: 54.0mm;
     margin: auto;
     padding: 10px;
@@ -168,7 +168,7 @@
                            </div>
                            <!-- /.box-header -->
                            <div class="box-body mt-5">
-                              <div class="nepali-card a4-size id-card page">
+                              <div class="nepali-card a4-size id-card page" style="height: 210px;">
                                   <div class="row">
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
                                              <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
@@ -230,7 +230,7 @@
                                     </div>
                              </div>
 
-                              <div class="nepali-card a4-size id-card mt-5 page">
+                              <div class="nepali-card a4-size id-card mt-5 page" style="height: 210px;">
                                   <div class="row">
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
                                              <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
