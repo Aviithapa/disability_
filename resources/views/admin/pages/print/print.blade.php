@@ -261,7 +261,15 @@
                                             <span>Card Number:- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span>
                                             <br>
                                             <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span> <br />
-                                            <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span> <br />
+                                              <div class="row">
+                                                <div class="col-lg-6">
+                                                    <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span> <br />
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <span>Contact Number : <span style="font-weight: 700">{{ $applicant->phone_number }}</span></span>
+                                                </div>
+                                            </div>
+                              
                                             <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> nature of disability:- <span style="font-weight: 700; font-size:12px;">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
                                 
                                         </div>
