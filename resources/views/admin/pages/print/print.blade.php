@@ -222,7 +222,7 @@
                                                     <span>रक्त समूह : <span style="font-weight: 700">{{ $applicant->blood_group }}</span></span><br>
                                                 </div>
                                             </div>
-                                            <span> प्रकृतिको आधारमा <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span> गम्भीरता:- <span style="font-weight: 700; font-size:16px;">{{ $applicant->disabilitySeverity->name_nepali }}</span></span><br>
+                                            <span> प्रकृतिको आधारमा <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span> गम्भीरता:- <span>{{ $applicant->disabilitySeverity->name_nepali }}</span></span><br>
                                             <span>बाबु/आमा वा संरक्षकको नाम :- <span style="font-weight: 700">{{ $applicant->guardian }}</span></span><br>
                                      
                                         </div>
@@ -270,7 +270,7 @@
                                                 </div>
                                             </div>
                               
-                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> Nature of disability:- <span style="font-weight: 700; font-size:12px;">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
+                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> Nature of disability:- <span>{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
                                 
                                         </div>
                                         <div class="col-lg-7 fs-10" style="display: flex; flex-direction:column">
