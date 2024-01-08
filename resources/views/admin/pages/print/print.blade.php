@@ -13,9 +13,7 @@
         .print-section {
             margin: 0px;
             background: #ffffff;
-           
-            /* Define the styles for the section you want to print */
-            /* You can hide other elements by setting display: none; */
+            size:A4;
         }
         .a4-size {
             size:A4;
@@ -25,57 +23,71 @@
             background-color: white; /* Optional: set a background color */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a box shadow */
         }
+        .row{
+         display: flex;
+         flex-wrap: wrap;
+        }
          .id-card {
-        width: 85.6mm;
-        height: 54.0mm;
+        width: 150px;
+        height: 60px;
         margin: auto;
         padding: 10px;
         border: 1px solid #ccc;
         box-sizing: border-box;
-    }
-    .fs-10{
-        font-size: 10px;
-    }
-      .fs-8{
-        font-size: 8px;
-    }
+        }
+        .col-lg-3 {
+            width: 25%;
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+        }
 
-    .fs-12{
-        font-size: 12px;
-    }
+        .col-lg-12{
+            width:100%;
+        }
+        .fs-10{
+            font-size: 10px;
+        }
+        .fs-8{
+            font-size: 8px;
+        }
 
-    .b-600{
-        font-weight: 600;
-    }
+        .fs-12{
+            font-size: 12px;
+        }
 
-    .align-item-center{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        .b-600{
+            font-weight: 600;
+        }
 
-    .img-container {
-        height: 40px;
-        width: 40px;
-    }
+        .align-item-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .img-container img{
-        width: 100%;
-        height: 100%;
-    }
+        .img-container {
+            height: 40px;
+            width: 40px;
+        }
 
-    .identity{
-        text-align: center;
-        color:white;
-    }
-    .main-footer{
-        display: none; /* Hide the row by default */
-    }
-     .page {
-      width: 21cm; /* A4 width */
-      height: 14.85cm; /* A4 height */
-      page-break-after: always; /* Force a new page after each page */
-    }
+        .img-container img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .identity{
+            text-align: center;
+            color:white;
+        }
+        .main-footer{
+            display: none; /* Hide the row by default */
+        }
+        .page {
+        width: 21cm; /* A4 width */
+        height: 14.85cm; /* A4 height */
+        page-break-after: always; /* Force a new page after each page */
+        }
   </style>   
   <style>
    .id-card {
@@ -147,8 +159,11 @@
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
                                              <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
-                                        <div class="col-lg-6 fs-10">
-                                            <div class="text-center b-600"  style="color: red;">
+                                        <div class="col-lg-6 fs-10" style="position: relative;">
+                                              <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:50%; transform:translate(-50%);">
+                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
+                                            </div>
+                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute;">
                                                 <span>प्रदेश सरकार</span>
                                                 <br>सुदूरपश्चिम प्रदेश
                                                 <br>दशरथचन्द नगरपालिका बैतडी
@@ -193,7 +208,7 @@
                                                     <span>रक्त समूह : <span style="font-weight: 700">{{ $applicant->blood_group }}</span></span><br>
                                                 </div>
                                             </div>
-                                            <span>अपाङ्गताको किसिम : प्रकृतिको आधारमा <span style="font-weight: 700">{{ $applicant->disability->name_nepali }}</span> गम्भीरता:- <span style="font-weight: 700">{{ $applicant->disabilitySeverity->name_nepali }}</span></span><br>
+                                            <span> प्रकृतिको आधारमा <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span> गम्भीरता:- <span style="font-weight: 700; font-size:16px;">{{ $applicant->disabilitySeverity->name_nepali }}</span></span><br>
                                             <span>बाबु/आमा वा संरक्षकको नाम :- <span style="font-weight: 700">{{ $applicant->guardian }}</span></span><br>
                                      
                                         </div>
@@ -229,7 +244,7 @@
                                             <br>
                                             <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span> <br />
                                             <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span> <br />
-                                            <span>severity of disability :  <span style="font-weight: 700">{{ $applicant->disability->name_english }}</span> nature of disability:- <span style="font-weight: 700">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
+                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> nature of disability:- <span style="font-weight: 700; font-size:12px;">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
                                 
                                         </div>
                                         <div class="col-lg-7 fs-10">
@@ -240,9 +255,7 @@
                                             <span> पद :- {{ $employee->designation }}</span><br>
                                           
                                         </div>
-                                        <div class="col-lg-5 mt-2">
-                                            <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
-                                        </div>
+                                       
                                           @endif
                                     </div>
                              </div>
