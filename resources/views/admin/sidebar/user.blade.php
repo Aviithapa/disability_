@@ -128,26 +128,14 @@
                         </a>
                     </li>
 
-                      <li class="side-nav-item">
-                        <a href="{{ route('user.index') }}" class="side-nav-link">
-                            <i class="bi-person"></i>
-                            <span> Users </span>
-                        </a>
-                    </li>
-
-                      <li class="side-nav-item">
-                        <a href="{{ route('employee.index') }}" class="side-nav-link">
-                            <i class="bi-person"></i>
-                            <span> Employee </span>
-                        </a>
-                    </li>
-
-                     <li class="side-nav-item">
+                      
+                <li class="side-nav-item">
                       <a href="{{ route('password.index') }}" class="side-nav-link">
                                 <i class="bi-lock"></i>
                                 <span>Change Password</span>
                       </a>
                         </li>
+                     
 
                        <li class="side-nav-item">
                       <a href="{{ route('logout') }}" class="side-nav-link">

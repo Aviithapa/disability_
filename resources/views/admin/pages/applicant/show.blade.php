@@ -251,6 +251,8 @@
                                                             @endif
                                                 @else
                                           <div class="user-profile-content">
+
+                                            @if(Auth::user()->role === 'admin')
                                               <form class="form-horizontal form-material" action="{{ url('/admin/approve/' . $data->id) }}" method="POST">
                                                     @csrf
 
@@ -344,6 +346,7 @@
                                                         </div>
                                                     </div>
                                                 </form>
+                                                @endif
                                                    
                                                 </div>
                                                 @endif

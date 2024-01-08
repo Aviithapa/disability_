@@ -29,6 +29,12 @@ class DashboardController extends Controller
                 $natureOfDisability = DisabilityType::withCount(['applicantDetailsBasedOnNatureOfDisability'])->where('type', 'nature_of_disability')->get();
                 return view('admin.dashboard.admin', compact('countsByCategory', 'natureOfDisability'));
                 break;
+            case 'user':
+                $countsByCategory = DisabilityType::withCount(['applicantDetails'])->where('type', 'severity_of_disability')->get();
+                $natureOfDisability = DisabilityType::withCount(['applicantDetailsBasedOnNatureOfDisability'])->where('type', 'nature_of_disability')->get();
+                return view('admin.dashboard.admin', compact('countsByCategory', 'natureOfDisability'));
+                break;
+
 
             default:
                 return $this->view('dashboard.default');

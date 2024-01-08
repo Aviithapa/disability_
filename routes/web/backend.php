@@ -31,6 +31,8 @@ Route::middleware(['auth'])->group(
         Route::get('/dashboard/edit/disability-group/{id}', [DisabilityGroupController::class, 'edit'])->name('disability-group.edit');
         Route::post('/admin/approve/{id}', [AdminController::class, 'updateAdmin'])->name('admin.approve');
         Route::resource('/dashboard/employee', EmployeeController::class);
+        Route::get('/dashboard/password/change', [UserController::class, 'passwordChangeIndex'])->name('password.index');
+        Route::post('/dashboard/password/change', [UserController::class, 'changePassword'])->name('user.password.change');
     }
 );
 

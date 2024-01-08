@@ -10,7 +10,9 @@ use App\Repositories\User\UserRepository;
 use App\Services\User\UserGetter;
 use App\Services\User\UserUpdater;
 use Exception;
+use Google\Service\ServiceControl\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
@@ -94,5 +96,30 @@ class UserController extends Controller
             session()->flash('danger', 'Oops! Something went wrong.');
             return redirect()->back()->withInput();
         }
+    }
+
+    public function passwordChangeIndex()
+    {
+        return view('admin.pages.user.change-password');
+    }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required|string',
+            'new_password' => 'required|string|min:8',
+        ]);
+
+        $user = Auth()->user();
+        if (!Hash::check($request->input('current_password'), $user->password)) {
+            session()->flash('error', 'Current password is incorrect.');
+            return redirect()->back()->withInput();
+        }
+        $data['password'] = Hash::make($request->input('new_password'));
+        $user = $this->userRepository->update($user->id, $data);
+        session()->flash('success', 'Password has been successfully changed.');
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
     }
 }

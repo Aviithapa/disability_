@@ -61,6 +61,7 @@
                                                     <label class="form-label" for="validationCustom01">Role</label>
                                                         <select class="form-select mb-3" name="role">
                                                            <option value="admin">Admin</option>
+                                                           <option value="user">User</option>
                                                             
                                                         </select>
                                                       @if($errors->any())
