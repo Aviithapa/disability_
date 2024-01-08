@@ -239,8 +239,8 @@
                                               <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:50%; transform:translate(-50%);">
                                                 <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                             </div>
-                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute;">
-                                                  <span>Province Government </span>
+                                            <div class="text-center b-600"  style="color: red; z-index:100; position: absolute; margin-top:-10px;">
+                                                <span>Province Government </span>
                                                 <br>Sudurpaschim Pardesh
                                                 <br>Dasharathchand Municipality, Baitadi
                                             </div>
@@ -251,7 +251,7 @@
                                                 {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(40)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12" style="padding: 0px 69px;">
+                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top: 2px;">
                                             <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                 DISABILITY IDENTITY CARD
                                             </div>
