@@ -56,7 +56,6 @@ class UserController extends Controller
             session()->flash('success', 'Account has been created successfully.');
             return redirect()->route('user.index');
         } catch (Exception $e) {
-            dd($e);
             session()->flash('danger', 'Oops! Something went wrong.');
             return redirect()->back()->withInput();
         }
