@@ -10,13 +10,20 @@
             margin: 0; /* No margin for the body */
             background: white;
         }
+        span{
+            line-height: 10.5px
+        }
         .print-section {
             margin: 0px;
             background: #ffffff;
             size:A4;
         }
+        .nepali-card row col-lg-12, .nepali-card row col-lg-7{
+            display: flex;
+            flex-direction: column;
+        }
         .a4-size {
-            size:A4;
+            size: A4 landscape;
             width: 210mm; /* A4 width in millimeters */
             height: 297mm; /* A4 height in millimeters */
             margin: 0 auto; /* Center the content on the page */
@@ -44,6 +51,13 @@
 
         .col-lg-12{
             width:100%;
+        }
+
+        .col-lg-6{
+             width: 50%;
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
         }
         .fs-10{
             font-size: 10px;
@@ -247,12 +261,12 @@
                                             <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> nature of disability:- <span style="font-weight: 700; font-size:12px;">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
                                 
                                         </div>
-                                        <div class="col-lg-7 fs-10">
-                                            <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span><br>
+                                        <div class="col-lg-7 fs-10" style="display: flex; flex-direction:column">
+                                            <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span>
                                             @if(isset($employee))
-                                            <span> हस्ताक्षर :- <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /></span><br>
-                                            <span> नाम,थर : - {{ $employee->name_nepali }}</span><br>
-                                            <span> पद :- {{ $employee->designation }}</span><br>
+                                            <span> हस्ताक्षर :- <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /></span>
+                                            <span> नाम,थर : - {{ $employee->name_nepali }}</span>
+                                            <span> पद :- {{ $employee->designation }}</span>
                                           
                                         </div>
                                        
