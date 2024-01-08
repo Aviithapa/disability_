@@ -270,7 +270,7 @@
                                                 </div>
                                             </div>
                               
-                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> nature of disability:- <span style="font-weight: 700; font-size:12px;">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
+                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> Nature of disability:- <span style="font-weight: 700; font-size:12px;">{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
                                 
                                         </div>
                                         <div class="col-lg-7 fs-10" style="display: flex; flex-direction:column">
