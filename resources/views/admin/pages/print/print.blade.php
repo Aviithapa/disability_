@@ -235,13 +235,17 @@
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
                                              <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
-                                        <div class="col-lg-6 fs-8">
-                                            <div class="text-center b-600" style="color: red;">
-                                                <span>Province Government </span>
+                                        <div class="col-lg-6 fs-10" style="position: relative;">
+                                              <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:50%; transform:translate(-50%);">
+                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
+                                            </div>
+                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute;">
+                                                  <span>Province Government </span>
                                                 <br>Sudurpaschim Pardesh
                                                 <br>Dasharathchand Municipality, Baitadi
                                             </div>
                                         </div>
+                                        
                                         <div class="col-lg-3">
                                             <div class="img-container">
                                                 {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(40)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
