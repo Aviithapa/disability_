@@ -13,6 +13,7 @@ use App\Repositories\Log\LogRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Auth;
+use Pratiksh\Nepalidate\Facades\NepaliDate;
 
 class AdminController extends AdminBaseController
 {
@@ -28,6 +29,8 @@ class AdminController extends AdminBaseController
     {
         $data = $request->all();
         $data['status'] = 'approved';
+        $data['approved_by'] = Auth::user()->id;
+        $data['approved_date'] = NepaliDate::create(\Carbon\Carbon::now())->toBS();;
         try {
             $applicant = $this->applicantController->update($id, $data);
             if ($applicant == false) {

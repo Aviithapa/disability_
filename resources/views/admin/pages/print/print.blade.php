@@ -230,7 +230,7 @@
                                     </div>
                              </div>
 
-                              <div class="nepali-card a4-size id-card mt-5 page" style="height: 210px;">
+                              <div class="nepali-card a4-size id-card mt-5 page" style="height: 220px;">
                                   <div class="row">
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
                                              <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
@@ -270,15 +270,17 @@
                                                 </div>
                                             </div>
                               
-                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> Nature of disability:- <span>{{ $applicant->disabilitySeverity->name_english }}</span></span><br>
+                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> 
+                                          <br>
                                 
                                         </div>
-                                        <div class="col-lg-7 fs-10" style="display: flex; flex-direction:column">
+                                        <div class="col-lg-7 fs-10" style="display: flex; flex-direction:column;  margin-top:5px;">
                                             <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span>
                                             @if(isset($employee))
                                             <span> हस्ताक्षर :- <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /></span>
                                             <span> नाम,थर : - {{ $employee->name_nepali }}</span>
                                             <span> पद :- {{ $employee->designation }}</span>
+                                            <span>जारी मिति : - {{ $applicant->approved_date }} <span>
                                           
                                         </div>
                                        

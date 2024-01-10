@@ -28,9 +28,13 @@
 
                                 <div class="card-body">
                         
-                                   
+
+                                    @if(isset($employee))
                                     <form method="POST" action="{{ route('employee.update', ['employee' => $employee->id]) }}">
                                         @method('PUT')
+                                    @else
+                                        <form method="POST" action="{{ route('employee.store') }}"
+                                    @endif
                                         @csrf
                     
                                        
@@ -39,7 +43,7 @@
                                              <div class="col-lg-6">
                                                 <fieldset class="form-group">
                                                     <label>नाम</label>
-                                                    <input name="name_nepali" class="form-control" id="basicInput" type="text" value="{{ $employee->name_nepali }}">
+                                                    <input name="name_nepali" class="form-control" id="basicInput" type="text" value="{{ isset($employee) ? $employee->name_nepali : ''}}">
                                                     @if($errors->any())
                                                         <div style="color:red !important">
                                                             {{ $errors->first('name_nepali') }}
@@ -50,7 +54,7 @@
                                              <div class="col-lg-6">
                                                 <fieldset class="form-group">
                                                     <label>Name</label>
-                                                    <input name="name_english" class="form-control" id="basicInput" type="text" value="{{  $employee->name_english }}">
+                                                    <input name="name_english" class="form-control" id="basicInput" type="text" value="{{ isset($employee) ? $employee->name_english : ''}}">
                                                     @if($errors->any())
                                                         <div style="color:red !important">
                                                             {{ $errors->first('name_english') }}
@@ -61,7 +65,7 @@
                                             <div class="col-lg-6">
                                                 <fieldset class="form-group">
                                                     <label>Phone Number</label>
-                                                    <input name="phone_number" class="form-control" id="basicInput" type="text" value="{{  $employee->phone_number }}">
+                                                    <input name="phone_number" class="form-control" id="basicInput" type="text" value="{{  isset($employee) ? $employee->phone_number : '' }}">
                                                     @if($errors->any())
                                                         <div style="color:red !important">
                                                             {{ $errors->first('phone_number') }}
@@ -72,7 +76,7 @@
                                             <div class="col-lg-6">
                                                 <fieldset class="form-group">
                                                     <label>Designation</label>
-                                                    <input name="designation" class="form-control" id="basicInput" type="text" value="{{  $employee->designation }}">
+                                                    <input name="designation" class="form-control" id="basicInput" type="text" value="{{ isset($employee) ? $employee->designation : ''}}">
                                                     @if($errors->any())
                                                         <div style="color:red !important">
                                                             {{ $errors->first('designation') }}

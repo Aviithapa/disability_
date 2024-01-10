@@ -8,8 +8,8 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pandey Connect</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Community Member</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Disability Management System</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Print Disability Card</a></li>
 
                                         </ol>
                                     </div>

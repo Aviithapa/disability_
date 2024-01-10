@@ -29,10 +29,21 @@ class ApplicantRepository extends Repository
     {
         $limit = $request->get('limit', config('app.per_page'));
         return $this->model->newQuery()
+            ->where('approved_by', '=', 'null')
+            ->filter(new ApplicantFilter($request))
             ->latest()
             ->paginate($limit);
     }
 
+
+    public function getPaginatedListForPrint(Request $request, array $columns = array('*')): LengthAwarePaginator
+    {
+        $limit = $request->get('limit', config('app.per_page'));
+        return $this->model->newQuery()
+            ->where('approved_by', '!=', 'null')
+            ->latest()
+            ->paginate($limit);
+    }
 
     public function getOrCreateMember($citizenship)
     {

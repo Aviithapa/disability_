@@ -136,9 +136,9 @@
                     </li>
 
                       <li class="side-nav-item">
-                        <a href="{{ route('employee.index') }}" class="side-nav-link">
+                        <a href="{{ route('employee.create') }}" class="side-nav-link">
                             <i class="bi-person"></i>
-                            <span> Employee </span>
+                            <span> My Details </span>
                         </a>
                     </li>
 

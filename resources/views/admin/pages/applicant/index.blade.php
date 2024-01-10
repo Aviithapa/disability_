@@ -8,8 +8,8 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pandey Connect</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Community Member</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Disability Management System</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Applicant List</a></li>
 
                                         </ol>
                                     </div>
@@ -28,7 +28,7 @@
                                             
                                             <div class="col-lg-4 col-md-4 col-sm-6"> 
                                                 <div class="mb-3">      
-                                                     <input type="text" name="full_name" class ="form-control" placeholder="Enter Full Name" id="name" value={{ isset($request) ? $request->full_name : '' }}>                             
+                                                     <input type="text" name="full_name" class ="form-control" placeholder="Enter Full Name" id="name" value="{{ isset($request) ? $request->full_name : '' }}">                             
                                                    
                                                 </div>
                                             </div> 
@@ -82,7 +82,7 @@
                                             <div class="card-widgets">
                                                 <a href="{{ route('applicant.create') }}" class="btn btn-primary" style="color: white;">नयाँ आवेदक थप्नुहोस्</a>
                                             </div>
-                                            <h5 class="header-title mb-0">Community Member List</h5>
+                                            <h5 class="header-title mb-0">Applicant List</h5>
                                         </div>
     
                                         <div id="yearly-sales-collapse" class="collapse show">

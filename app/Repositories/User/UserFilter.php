@@ -11,7 +11,7 @@ class UserFilter extends BaseFilter
      *
      * @var array
      */
-    protected $filters = ['keyword', 'type', 'status'];
+    protected $filters = ['name', 'type', 'status'];
 
 
     /**
@@ -19,10 +19,10 @@ class UserFilter extends BaseFilter
      *
      * @return void
      */
-    public function keyword()
+    public function name()
     {
-        if ($this->request->has('keyword')) {
-            $this->builder->where('name', 'LIKE', '%' . $this->request->get('keyword') . '%');
+        if ($this->request->has('name')) {
+            $this->builder->where('name', 'LIKE', '%' . $this->request->get('name') . '%');
         }
     }
 

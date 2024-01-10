@@ -28,7 +28,7 @@ class PrintController extends BaseController
     public function index(Request $request)
     {
         $request['status'] = 'approved';
-        $applicant = $this->applicantRepository->getPaginatedList($request);
+        $applicant = $this->applicantRepository->getPaginatedListForPrint($request);
         $disability_types = $this->disabilityTypeRepository->all()->where('type', 'nature_of_disability');
         $severity_types = $this->disabilityTypeRepository->all()->where('type', 'severity_of_disability');
         return view('admin.pages.print.index', compact('applicant', 'request', 'disability_types', 'severity_types'));
@@ -64,7 +64,7 @@ class PrintController extends BaseController
     public function show($id)
     {
         $applicant = $this->applicantRepository->find($id);
-        $employee = Employee::all()->where('status', 'active')->first();
+        $employee = $applicant->user->employee;
         return view('admin.pages.print.print', compact('applicant', 'employee'));
     }
 

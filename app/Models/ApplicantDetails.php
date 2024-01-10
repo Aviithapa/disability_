@@ -3,12 +3,13 @@
 
 namespace App\Models;
 
-
+use App\Infrastructure\Traits\HasFilter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
 class ApplicantDetails extends Model
 {
+    use HasFilter;
     protected $table = 'applicant_details';
     protected $fillable = [
         'full_name',
@@ -53,6 +54,8 @@ class ApplicantDetails extends Model
         'decision_image',
         'disability_type_id',
         'incapacitated_base_disability_type_id',
+        'approved_by',
+        'approved_date'
     ];
 
     public function getProfileImage()
@@ -126,5 +129,10 @@ class ApplicantDetails extends Model
     public function disabilitySeverity()
     {
         return $this->belongsTo(DisabilityType::class, 'incapacitated_base_disability_type_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'approved_by', 'id');
     }
 }

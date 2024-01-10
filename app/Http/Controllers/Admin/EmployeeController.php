@@ -7,6 +7,7 @@ use App\Repositories\Employee\EmployeeRepository;
 use App\Repositories\Log\LogRepository;
 use App\Services\Log\LogCreator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EmployeeController extends BaseController
 {
@@ -38,7 +39,9 @@ class EmployeeController extends BaseController
     public function create()
     {
         //
-        return view('admin.pages.employee.form');
+        $user = Auth::user();
+        $employee = $this->employeeRepository->findBy('user_id', $user->id);
+        return view('admin.pages.employee.form', compact('employee'));
     }
 
     /**
@@ -54,7 +57,7 @@ class EmployeeController extends BaseController
                 return redirect()->back()->withInput();
             }
             session()->flash('success', 'Employee has been created successfully');
-            return redirect()->route('employee.index');
+            return redirect()->route('employee.create');
         } catch (\Exception $e) {
             dd($e);
             session()->flash('danger', 'Oops! Something went wrong.');
@@ -79,7 +82,7 @@ class EmployeeController extends BaseController
     {
         //
         $employee = $this->employeeRepository->find($id);
-        return view('admin.pages.employee.edit', compact('employee'));
+        return view('admin.pages.employee.form', compact('employee'));
     }
 
     /**
@@ -96,7 +99,7 @@ class EmployeeController extends BaseController
             }
 
             session()->flash('success', 'Employee has been updated successfully');
-            return redirect()->route('employee.index');
+            return redirect()->route('employee.create');
         } catch (\Exception $e) {
             session()->flash('danger', 'Oops! Something went wrong.');
             return redirect()->back()->withInput();

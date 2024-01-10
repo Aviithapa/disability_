@@ -19,7 +19,8 @@ class Employee extends Model
         'black_signature',
         'stamp',
         'status',
-        'photo'
+        'photo',
+        'user_id',
     ];
 
     public function getProfileImage()
@@ -56,5 +57,10 @@ class Employee extends Model
         } else {
             return imageNotFound();
         }
+    }
+
+    public function users()
+    {
+        return $this->hasOne(User::class, 'user_id', 'id');
     }
 }

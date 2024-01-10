@@ -33,6 +33,9 @@ class ApplicantController extends BaseController
      */
     public function index(Request $request)
     {
+        // dd($request->get('full_name'));
+        // $data = $request->all();
+        // dd($data);
         $applicant = $this->applicantRepository->getPaginatedList($request);
         $disability_types = $this->disabilityTypeRepository->all()->where('type', 'nature_of_disability');
         $severity_types = $this->disabilityTypeRepository->all()->where('type', 'severity_of_disability');

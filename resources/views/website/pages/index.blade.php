@@ -86,7 +86,7 @@
                 data-aos-duration="2000"
               >
                 <p class="subtitle">The Story</p>
-                <h2>About Pandey Connect</h2>
+                <h2>About Disability Management System</h2>
                 <p>
                   Welcome to PandeyConnect, where the tapestry of our vibrant
                   community is meticulously woven into a digital archive. At
