@@ -79,10 +79,10 @@
                                 <div class="card">
                                     <div class="card-body p-0">
                                         <div class="p-3">
-                                            <div class="card-widgets">
+                                            {{-- <div class="card-widgets">
                                                 <a href="{{ route('applicant.create') }}" class="btn btn-primary" style="color: white;">नयाँ आवेदक थप्नुहोस्</a>
-                                            </div>
-                                            <h5 class="header-title mb-0">Community Member List</h5>
+                                            </div> --}}
+                                            <h5 class="header-title mb-0">Print List</h5>
                                         </div>
     
                                         <div id="yearly-sales-collapse" class="collapse show">

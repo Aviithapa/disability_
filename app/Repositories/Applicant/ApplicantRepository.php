@@ -29,7 +29,7 @@ class ApplicantRepository extends Repository
     {
         $limit = $request->get('limit', config('app.per_page'));
         return $this->model->newQuery()
-            ->where('approved_by', '=', 'null')
+            ->whereNull('approved_by')
             ->filter(new ApplicantFilter($request))
             ->latest()
             ->paginate($limit);
