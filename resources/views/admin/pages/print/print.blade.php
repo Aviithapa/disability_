@@ -59,14 +59,14 @@
             flex: 0 0 auto;
         }
         .fs-10{
-            font-size: 38px !important;
+            font-size: 14px;
         }
         .fs-8{
-            font-size: 36px !important; 
+            font-size: 12px;
         }
 
         .fs-12{
-            font-size: 40px !important;
+            font-size: 16px;
         }
 
         .b-600{
@@ -79,10 +79,10 @@
             align-items: center;
         }
 
-      .img-container {
-    height: 26vh;
-    width: 18vw;
-}
+        .img-container {
+            height: 20vh;
+            width: 20vw;
+        }
 
         .img-container img{
             width: 100%;
@@ -90,8 +90,7 @@
         }
 
         .identity{
-            justify-content: center;
-            align-items: center;
+            text-align: center;
             color:white;
         }
         .main-footer{
@@ -117,16 +116,15 @@
     box-sizing: border-box;
 }
  .fs-10{
-            font-size: 38px !important;
+            font-size: 14px;
         }
         .fs-8{
-            font-size: 36px !important; 
+            font-size: 12px;
         }
 
         .fs-12{
-            font-size: 40px !important;
+            font-size: 16px;
         }
-
 
 .b-600{
     font-weight: 600;
@@ -139,8 +137,8 @@
 }
 
 .img-container {
-    height: 26vh;
-    width: 18vw;
+    height: 18vh;
+    width: 15vw;
 }
 
 .img-container img{
@@ -166,31 +164,31 @@
 
              <div class="nepali-card a4-size id-card page" style="height: 100vh; padding:5px;">
                                   <div class="row">
-                                        <div class="col-lg-3 align-item-center" style="height:30vh;">
-                                             <img src="{{ asset('assets/images/logo.png') }}" alt="" height="150" />
+                                        <div class="col-lg-3 align-item-center">
+                                             <img src="{{ asset('assets/images/logo.png') }}" alt="" height="50" />
                                         </div>
                                         <div class="col-lg-6 fs-10" style="position: relative; display:flex; justify-content:center;">
                                               <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:60%; transform:translate(-50%);">
-                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="150" />
+                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                             </div>
                                             <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; ">
                                                 <span>प्रदेश सरकार</span>
                                                 <br>सुदूरपश्चिम प्रदेश
-                                                <br>दशरथचन्द नगरपालिका, <br /> बैतडी
+                                                <br>दशरथचन्द नगरपालिका बैतडी
                                             </div>
                                         </div>
-                                        <div class="col-lg-3" style="height:30vh; margin-top:5px;">
+                                        <div class="col-lg-3" style="height:20vh; margin-top:5px;">
                                             <div class="img-container">
-                                                <img src="{{ $applicant->getProfileImage() }}" alt="" height="150" >
+                                                <img src="{{ $applicant->getProfileImage() }}" alt="" height="100" >
                                             </div>
                                         </div>
-                                        <div class="col-lg-12" style="padding: 0px 69px; ">
-                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; height:5vh; align-item: center; display:flex; font-size: 26px !important;background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
+                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:3px;">
+                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; height:8vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                अपाङ्गता परिचय पत्र
                                             </div>
                                         </div>
                                        
-                                        <div class="col-lg-12 fs-10">
+                                        <div class="col-lg-12 fs-10" style="margin-top:3px;">
                                             <span>परिचयपत्र नं :- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span>
                                             <br>
                                             <span>नाम,थर :- <span style="font-weight: 700">{{ $applicant->full_name_nep }} </span></span>
@@ -218,41 +216,50 @@
                                                     <span>रक्त समूह : <span style="font-weight: 700">{{ $applicant->blood_group }}</span></span><br>
                                                 </div>
                                             </div>
-                                            <span> प्रकृतिको आधारमा <span style="font-weight: 700; font-size:44px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span> गम्भीरता:- <span>{{ $applicant->disabilitySeverity->name_nepali }}</span></span><br>
+                                            <span> प्रकृतिको आधारमा <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span> गम्भीरता:- <span>{{ $applicant->disabilitySeverity->name_nepali }}</span></span><br>
                                             <span>बाबु/आमा वा संरक्षकको नाम :- <span style="font-weight: 700">{{ $applicant->guardian }}</span></span><br>
                                      
                                         </div>
                                         <div class="col-lg-3 mt-2"></div>
                                     </div>
                              </div>
+               <div class="row">
+                   <div class="col-lg-12 m-b-3">
 
-                              <div class="nepali-card a4-size id-card page" style="height: 100vh; padding:5px;">
+                       <div class="box box-info">
+                          
+                           <!-- /.box-header -->
+                           <div class="box-body mt-5">
+                             
+
+                              <div class="nepali-card a4-size id-card mt-5 page" style="height: 220px;">
                                   <div class="row">
-                                        <div class="col-lg-3 align-item-center" style="height:30vh;">
-                                             <img src="{{ asset('assets/images/logo.png') }}" alt="" height="150" />
+                                        <div class="col-lg-3 align-item-center" style="height:50px;">
+                                             <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
-                                        <div class="col-lg-6 fs-10" style="position: relative; display:flex; justify-content:center;">
-                                              <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:60%; transform:translate(-50%);">
-                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="150" />
+                                        <div class="col-lg-6 fs-10" style="position: relative;">
+                                              <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:50%; transform:translate(-50%);">
+                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                             </div>
-                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; ">
-                                               <span>Province Government </span>
+                                            <div class="text-center b-600"  style="color: red; z-index:100; position: absolute; margin-top:-10px;">
+                                                <span>Province Government </span>
                                                 <br>Sudurpaschim Pardesh
                                                 <br>Dasharathchand Municipality, Baitadi
                                             </div>
                                         </div>
-                                        <div class="col-lg-3" style="height:20vh; margin-top:5px;">
+                                        
+                                        <div class="col-lg-3">
                                             <div class="img-container">
-                                               {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(200)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
+                                                {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(40)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12" style="padding: 0px 69px; ">
-                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; height:5vh; align-item: center; display:flex; font-size: 26px !important;background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
-                                               अपाङ्गता परिचय पत्र
+                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top: 2px;">
+                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
+                                                DISABILITY IDENTITY CARD
                                             </div>
                                         </div>
                                        
-                                       <div class="col-lg-12 fs-10">
+                                        <div class="col-lg-12 fs-10">
                                             <span>Card Number:- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span>
                                             <br>
                                             <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span> <br />
@@ -265,24 +272,27 @@
                                                 </div>
                                             </div>
                               
-                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:44px;">{{ $applicant->disability->name_english }}</span> 
+                                            <span>Severity of disability :  <span style="font-weight: 700; font-size:12px;">{{ $applicant->disability->name_english }}</span> 
                                           <br>
                                 
                                         </div>
-                                        <div class="col-lg-7 fs-10" style="">
-                                            <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span> <br />
+                                        <div class="col-lg-7 fs-10" style="display: flex; flex-direction:column;  margin-top:5px;">
+                                            <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span>
                                             @if(isset($employee))
-                                            <span> हस्ताक्षर :- <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="50"  /></span>  <br />
-                                            <span> नाम,थर : - {{ $employee->name_nepali }}</span>  <br />
-                                            <span> पद :- {{ $employee->designation }}</span>  <br />
+                                            <span> हस्ताक्षर :- <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /></span>
+                                            <span> नाम,थर : - {{ $employee->name_nepali }}</span>
+                                            <span> पद :- {{ $employee->designation }}</span>
                                             <span>जारी मिति : - {{ $applicant->approved_date }} <span>
                                           
                                         </div>
                                        
                                           @endif
-                                        <div class="col-lg-3 mt-2"></div>
                                     </div>
                              </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
            </div>
  </div>
  
