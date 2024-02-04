@@ -59,14 +59,14 @@
             flex: 0 0 auto;
         }
         .fs-10{
-            font-size: 10px;
+            font-size: 14px;
         }
         .fs-8{
-            font-size: 8px;
+            font-size: 12px;
         }
 
         .fs-12{
-            font-size: 12px;
+            font-size: 16px;
         }
 
         .b-600{
