@@ -4,6 +4,7 @@
  <style type="text/css" media="print">
         @page {
             size: A4; /* Default page size */
+            orientation: landscape;
             margin: 0; /* No margin for the page */
         }
         body {
@@ -24,8 +25,8 @@
         }
         .a4-size {
             size: A4 landscape;
-            width: 210mm; /* A4 width in millimeters */
-            height: 310mm; /* A4 height in millimeters */
+            width: 100vw; /* A4 width in millimeters */
+            height: 100vh; /* A4 height in millimeters */
             margin: 0 auto; /* Center the content on the page */
             background-color: white; /* Optional: set a background color */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a box shadow */
@@ -35,11 +36,9 @@
          flex-wrap: wrap;
         }
          .id-card {
-        width: 150px;
-        height: 60px;
+        width: 100vw;
+        height: 100vh;
         margin: auto;
-        padding: 10px;
-        border: 1px solid #ccc;
         box-sizing: border-box;
         }
         .col-lg-3 {
@@ -104,12 +103,15 @@
         }
   </style>   
   <style>
+     @page {
+            size: A4; /* Default page size */
+            orientation: landscape;
+            margin: 0; /* No margin for the page */
+        }
    .id-card {
-    width: 90mm;
-    height: 54.0mm;
+    width: 100vw;
+    height: 100vh;
     margin: auto;
-    padding: 10px;
-    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 .fs-10{
@@ -158,34 +160,26 @@
    
 
     {{--        <!-- Main content -->--}}
-           <div class="content" style="margin-top:10px;">
+           <div class="content">
 
-               <div class="row">
-                   <div class="col-lg-12 m-b-3">
-                       <div class="box box-info">
-                           <div class="box-header with-border p-t-1">
-                              
-                           </div>
-                           <!-- /.box-header -->
-                           <div class="box-body mt-5">
-                              <div class="nepali-card a4-size id-card page" style="height: 210px;">
+             <div class="nepali-card a4-size id-card page" style="height: 100vh;">
                                   <div class="row">
                                         <div class="col-lg-3 align-item-center" style="height:50px;">
                                              <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
-                                        <div class="col-lg-6 fs-10" style="position: relative;">
-                                              <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:50%; transform:translate(-50%);">
+                                        <div class="col-lg-6 fs-10" style="position: relative; display:flex; justify-content:center;">
+                                              <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:60%; transform:translate(-50%);">
                                                 <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                             </div>
-                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute;">
+                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; ">
                                                 <span>प्रदेश सरकार</span>
                                                 <br>सुदूरपश्चिम प्रदेश
                                                 <br>दशरथचन्द नगरपालिका बैतडी
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3" style="height:50px; margin-top:5px;">
                                             <div class="img-container">
-                                                <img src="{{ $applicant->getProfileImage() }}">
+                                                <img src="{{ $applicant->getProfileImage() }}" alt="" height="40" >
                                             </div>
                                         </div>
                                         <div class="col-lg-12" style="padding: 0px 69px;">
@@ -229,6 +223,14 @@
                                         <div class="col-lg-3 mt-2"></div>
                                     </div>
                              </div>
+               <div class="row">
+                   <div class="col-lg-12 m-b-3">
+
+                       <div class="box box-info">
+                          
+                           <!-- /.box-header -->
+                           <div class="box-body mt-5">
+                             
 
                               <div class="nepali-card a4-size id-card mt-5 page" style="height: 220px;">
                                   <div class="row">
