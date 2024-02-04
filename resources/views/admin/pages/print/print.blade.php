@@ -2,9 +2,9 @@
 
 @section('content')
  <style type="text/css" media="print">
+   @media print{
         @page {
-            size: A4; /* Default page size */
-            orientation: landscape;
+            size: A4 landscape;
             margin: 0; /* No margin for the page */
         }
         body {
@@ -101,10 +101,11 @@
         height: 14.85cm; /* A4 height */
         page-break-after: always; /* Force a new page after each page */
         }
+    }
   </style>   
   <style>
      @page {
-            size: A4; /* Default page size */
+            size: CR80; /* Default page size */
             orientation: landscape;
             margin: 0; /* No margin for the page */
         }
@@ -114,17 +115,16 @@
     margin: auto;
     box-sizing: border-box;
 }
-.fs-10{
-    font-size: 10px;
-}
+ .fs-10{
+            font-size: 14px;
+        }
+        .fs-8{
+            font-size: 12px;
+        }
 
-.fs-8{
-        font-size: 8px;
-    }
-
-.fs-12{
-    font-size: 12px;
-}
+        .fs-12{
+            font-size: 16px;
+        }
 
 .b-600{
     font-weight: 600;
