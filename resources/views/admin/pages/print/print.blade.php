@@ -6,6 +6,7 @@
         @page {
             size: 85.60mm 53.98mm landscape;
             margin: 0; /* No margin for the page */
+            color: black;
         }
         body {
             margin: 0; /* No margin for the body */
@@ -60,9 +61,11 @@
         }
         .fs-10{
             font-size: 20px;
+             color: black;
         }
         .fs-8{
             font-size: 18px;
+             color: black;
         }
 
         .fs-12{
