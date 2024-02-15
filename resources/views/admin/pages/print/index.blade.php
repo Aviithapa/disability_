@@ -114,7 +114,9 @@
                                           <td>{{ $item->dob_nep }}</td>
                                          
                                           <td>
-                                            <a  href="{{ url('print/'.$item->id) }}"><span class="label label-success"><i class="bi-printer"></i></span></a>
+                                            <a  href="{{ url('print/'.$item->id) }}" target="blank"><span class="label label-success"><button class="btn btn-primary">Front</button></span></a>
+                                            <a  href="{{ url('back-print/'.$item->id) }}" target="blank"><span class="label label-success"><button class="btn btn-primary">Back</button></span></a>
+
                                            
                                         </td>
                                           </tr>

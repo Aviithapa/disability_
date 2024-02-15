@@ -101,4 +101,11 @@ class PrintController extends BaseController
     {
         //
     }
+
+    public function backPrint($id)
+    {
+        $applicant = $this->applicantRepository->find($id);
+        $employee = $applicant->user->employee;
+        return view('admin.pages.print.back-print', compact('applicant', 'employee'));
+    }
 }

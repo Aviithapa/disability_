@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(
         Route::resource('/dashboard/employee', EmployeeController::class);
         Route::get('/dashboard/password/change', [UserController::class, 'passwordChangeIndex'])->name('password.index');
         Route::post('/dashboard/password/change', [UserController::class, 'changePassword'])->name('user.password.change');
+        Route::get('back-print/{id}', [PrintController::class, 'backPrint'])->name('print.back');
     }
 );
 
