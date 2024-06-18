@@ -152,3 +152,21 @@ if (!function_exists('getSupplierName')) {
             ->first();
     }
 }
+
+if (!function_exists('getDisabilityName')) {
+    /**
+     * Generates the alias equivalent for the provided string
+     *
+     * @param $string
+     * @return mixed|string
+     */
+    function getDisabilityName($id)
+    {
+        return
+            DB::table('disablity_type')
+            ->where('id', $id)
+            ->pluck('name_nepali')
+            ->first();
+    }
+}
+

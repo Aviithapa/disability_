@@ -24,15 +24,15 @@
                             <form  action="{{route('applicant.index')}}"  method="POST" novalidate>
                             @csrf
 
-                                        <div class="row" style="padding: 20px 10px 0px 10px;"> 
-                                            
-                                            <div class="col-lg-4 col-md-4 col-sm-6"> 
-                                                <div class="mb-3">      
-                                                     <input type="text" name="full_name" class ="form-control" placeholder="Enter Full Name" id="name" value="{{ isset($request) ? $request->full_name : '' }}">                             
-                                                   
+                                        <div class="row" style="padding: 20px 10px 0px 10px;">
+
+                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                <div class="mb-3">
+                                                     <input type="text" name="full_name" class ="form-control" placeholder="Enter Full Name" id="name" value="{{ isset($request) ? $request->full_name : '' }}">
+
                                                 </div>
-                                            </div> 
-                                            <div class="col-lg-2 col-md-2 col-sm-6"> 
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-6">
                                                 <div class="mb-3">
                                                      <select class="form-select" name="status">
                                                         <option value={{ isset($request->status) ? $request->status : ''}}>{{ isset($request->status) ? $request->status : 'स्थिति चयन गर्नुहोस्'}}</option>
@@ -43,7 +43,7 @@
                                                      </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-6"> 
+                                            <div class="col-lg-2 col-md-2 col-sm-6">
                                                 <div class="mb-3">
                                                     <select class="form-control" name="disability_type">
                                                         <option value={{ isset($request->disability_type) ? $request->disability_type : ''}}>{{ isset($request->disability_type) ? getDisabilityName($request->disability_type) : 'असक्षमता प्रकार चयन गर्नुहोस्'}}</option>
@@ -52,8 +52,8 @@
                                                         @endforeach
                                                      </select>
                                                 </div>
-                                            </div> 
-                                            <div class="col-lg-3 col-md-3 col-sm-6"> 
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6">
                                                 <div class="mb-3">
                                                       <select class="form-select " name="serverity_disability_type" id='serverity_disability_type'>
                                                             <option value={{ isset($request->serverity_disability_type) ? $request->serverity_disability_type : ''}}>{{ isset($request->serverity_disability_type) ? getDisabilityName($request->serverity_disability_type) : 'असक्षमता प्रकार चयन गर्नुहोस्'}}</option>
@@ -63,17 +63,17 @@
                                                       </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-1 col-md-1 col-sm-6"> 
+                                            <div class="col-lg-1 col-md-1 col-sm-6">
                                                 <button class="btn btn-primary" type="submit">Search</button>
                                              </div>
                                         </div>
                                     </form>
-                                    
-                                </div>     
 
-                     
+                                </div>
+
+
                         <div class="row">
-    
+
                             <div class="col-xl-12">
                                 <!-- Todo-->
                                 <div class="card">
@@ -84,9 +84,9 @@
                                             </div>
                                             <h5 class="header-title mb-0">Applicant List</h5>
                                         </div>
-    
+
                                         <div id="yearly-sales-collapse" class="collapse show">
-    
+
                                             <div class="table-responsive">
                                                 <table class="table table-nowrap table-hover mb-0">
                                        <thead>
@@ -124,17 +124,17 @@
                                           </tr>
                                           @endforeach
 
-                                           
-                                           
+
+
                                        </tbody>
-                                     
+
                                    </table>
                                                    <div style="padding: 10px; float:right;">
                                                 {{  $applicant->appends(request()->query())->links('admin.layout.pagination') }}
                                                 </div>
-                                            </div>        
+                                            </div>
                                         </div>
-                                    </div>                           
+                                    </div>
                                 </div> <!-- end card-->
                             </div> <!-- end col-->
                         </div>

@@ -36,9 +36,12 @@ class ApplicantRepository extends Repository
                 $query->whereNull('approved_by');
             }
 
-            return $query->filter(new ApplicantFilter($request))
+
+            $data =  $query->filter(new ApplicantFilter($request))
                         ->latest()
                         ->paginate($limit);
+
+                        return $data;
     }
 
 

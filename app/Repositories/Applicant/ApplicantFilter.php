@@ -11,7 +11,7 @@ class ApplicantFilter extends BaseFilter
      *
      * @var array
      */
-    protected $filters = ['full_name', 'type', 'status'];
+    protected $filters = ['full_name', 'type', 'status', 'disability_type' , 'serverity_disability_type'];
 
 
     /**
@@ -38,6 +38,20 @@ class ApplicantFilter extends BaseFilter
     {
         if ($this->request->has('status')) {
             $this->builder->where('status', $this->request->get('status'));
+        }
+    }
+
+    public function disabilityType()
+    {
+        if ($this->request->has('disability_type')) {
+            $this->builder->where('incapacitated_base_disability_type_id', $this->request->get('disability_type'));
+        }
+    }
+
+    public function serverityDisabilityType()
+    {
+        if ($this->request->has('serverity_disability_type')) {
+            $this->builder->where('disability_type_id', $this->request->get('serverity_disability_type'));
         }
     }
 }
