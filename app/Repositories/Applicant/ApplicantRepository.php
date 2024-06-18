@@ -28,11 +28,17 @@ class ApplicantRepository extends Repository
     public function getPaginatedList(Request $request, array $columns = array('*')): LengthAwarePaginator
     {
         $limit = $request->get('limit', config('app.per_page'));
-        return $this->model->newQuery()
-            ->whereNull('approved_by')
-            ->filter(new ApplicantFilter($request))
-            ->latest()
-            ->paginate($limit);
+
+    $query = $this->model->newQuery();
+
+    // Check if the request is not empty
+    if (!$request->isEmpty()) {
+        $query->whereNull('approved_by');
+    }
+
+    return $query->filter(new ApplicantFilter($request))
+                 ->latest()
+                 ->paginate($limit);
     }
 
 
