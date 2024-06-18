@@ -29,16 +29,16 @@ class ApplicantRepository extends Repository
     {
         $limit = $request->get('limit', config('app.per_page'));
 
-    $query = $this->model->newQuery();
+        $query = $this->model->newQuery();
 
-    // Check if the request is not empty
-    if (!$request->isEmpty()) {
-        $query->whereNull('approved_by');
-    }
+            // Check if the request is not empty
+            if (!$request->has('status')) {
+                $query->whereNull('approved_by');
+            }
 
-    return $query->filter(new ApplicantFilter($request))
-                 ->latest()
-                 ->paginate($limit);
+            return $query->filter(new ApplicantFilter($request))
+                        ->latest()
+                        ->paginate($limit);
     }
 
 
