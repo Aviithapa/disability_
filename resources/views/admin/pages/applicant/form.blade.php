@@ -102,7 +102,7 @@
                                                 <fieldset class="form-group">
                                                     <label class="preeti-family">लिङ्ग</label>
                                                     <select class="form-control" name="sex" required>
-                                                        <option>Select</option>
+                                                        <option value="">Select</option>
                                                         <option value="male">Male</option>
                                                         <option value="female">Female</option>
                                                         <option value="other">Other</option>
@@ -230,7 +230,7 @@
                                                 <fieldset class="form-group">
                                                     <label>सहायक सामग्रीको प्रयोग गर्ने गरेको/नगरेकोः (उपयुक्त स्थानमा चिनो लगाउनुहोस्)</label>
                                                     <select class="form-control" name="already_material_used" id='material_used' value="{{ old('already_material_used') }}"  onchange="materialUsed()" required>
-                                                        <option>Select</option>
+                                                        <option value="">Select</option>
                                                         <option value="Yes">Yes</option>
                                                         <option value="No">No</option>
                                                     </select>
