@@ -29,11 +29,11 @@
                             <div class="card">
 
                                 <div class="card-body">
-                        
-                                   
+
+
                                     <form method="POST" action="{{ route('applicant.store') }}" style="padding:20px;">
                                         @csrf
-                    
+
                                          <div class="row" style="display: flex; justify-content:space-between;">
                                               <div class="col-lg-6">
                                               </div>
@@ -46,13 +46,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getTranscriptImage():imageNotFound())}}" height="150" width="150"
                                                                          id="transcript_tslc_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getTranscriptImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="transcript_tslc_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="transcript_tslc_help_text" class="help-block"></small>
@@ -74,7 +74,7 @@
                                                 </div>
                                             </div>
                                          </div>
-                                            
+
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <fieldset class="form-group">
@@ -214,7 +214,7 @@
                                                 <fieldset class="form-group">
                                                     <label>सहायक सामग्री प्रयोग गर्नुपर्ने आवश्यकता भएको/नभएकोः (उपयुक्त स्थानमा चिनो लगाउनुहोस्)</label>
                                                     <select class="form-control" name="material_used"  required>
-                                                        <option>Select</option>
+                                                        <option value="">Select</option>
                                                         <option value="Yes">Yes</option>
                                                         <option value="No">No</option>
                                                     </select>
@@ -274,7 +274,7 @@
                                             </div>
                                         </div>
                                            <div class="row" style="display: flex; justify-content:space-between;">
-                                              
+
                                             <div class="col-lg-3">
                                                 <div class="grid-body">
                                                     <div class="row">
@@ -284,13 +284,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getWardRecommendationImage():imageNotFound())}}" height="150" width="150"
                                                                          id="ward_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getWardRecommendationImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="ward_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="ward_help_text" class="help-block"></small>
@@ -326,13 +326,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getHealthExaminationImage():imageNotFound())}}" height="150" width="150"
                                                                          id="health_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getHealthExaminationImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="health_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="health_help_text" class="help-block"></small>
@@ -368,13 +368,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getCitizenshipImage():imageNotFound())}}" height="150" width="150"
                                                                          id="citizenship_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getCitizenshipImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="citizenship_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="citizenship_help_text" class="help-block"></small>
@@ -410,13 +410,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getFullSizeImage():imageNotFound())}}" height="150" width="150"
                                                                          id="full_size_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getFullSizeImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="full_size_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="full_size_help_text" class="help-block"></small>
@@ -443,15 +443,15 @@
                                                 </div>
                                             </div>
                                          </div>
-                                       
-                        
+
+
                                         <button type="submit" class="btn btn-primary float-right mt-2"><i class="fa fa-check"></i>
                                             Save</button>
-                        
+
                                     </form>
-                        
+
                                 </div>
-                        
+
                             </div>
                            </div>
                        </div>
