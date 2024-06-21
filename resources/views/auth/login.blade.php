@@ -2,10 +2,10 @@
 @extends('website.layout.app')
 
 @section('content')
-   
+
 
     <!-- ================> Page header start here <================== -->
-    <section class="page-header bg--cover" style="background-image: url('{{ asset('assets/images/disability.jpeg') }}');">
+    <section class="page-header" style="background-image: url('{{ asset('assets/images/disability.jpeg') }}'); height:200px;">
         <div class="container">
             <div class="page-header__content text-center">
                 <h2 class="text-uppercase">Sign In</h2>
@@ -24,7 +24,7 @@
 
 
     <!-- ==========signin Section start Here========== -->
-    <div class="account padding-top padding-bottom">
+    <div class="account padding-bottom">
         <div class=" container">
             <div class="row g-5 align-items-center flex-md-row-reverse">
                 <div class="col-lg-5">

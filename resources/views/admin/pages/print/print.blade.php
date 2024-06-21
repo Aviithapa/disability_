@@ -105,7 +105,7 @@
         page-break-after: always; /* Force a new page after each page */
         }
     }
-  </style>   
+  </style>
   <style>
      @page {
             size: CR80; /* Default page size */
@@ -156,12 +156,12 @@
 
 
 
-  </style>   
+  </style>
 
 
  <div class="content-wrapper print-section" style="background: #fff;">
     <!-- Content Header (Page header) -->
-   
+
 
     {{--        <!-- Main content -->--}}
            <div class="content">
@@ -169,16 +169,14 @@
              <div class="nepali-card a4-size id-card page" style="height: 100vh; padding:2px;">
                                   <div class="row">
                                         <div class="col-lg-3 align-item-center">
-                                             <img src="{{ asset('assets/images/logo.png') }}" alt="" height="50" />
+                                             <img src="{{ asset('assets/images/logo.png') }}" alt="" height="40" />
                                         </div>
                                         <div class="col-lg-6 fs-10" style="position: relative; display:flex; justify-content:center;">
                                               <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:60%; transform:translate(-50%);">
-                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
+                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="40" />
                                             </div>
                                             <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; ">
-                                                <span>प्रदेश सरकार</span>
-                                                <br>सुदूरपश्चिम प्रदेश
-                                                <br>दशरथचन्द नगरपालिका, <br/>बैतडी
+                                                 दशरथचन्द नगरपालिका <br>नगर कार्यपालिका कार्यालय  <br/>बैतडी
                                             </div>
                                         </div>
                                         <div class="col-lg-3" style="height:20vh; margin-top:5px;">
@@ -191,59 +189,75 @@
                                                अपाङ्गता परिचय पत्र
                                             </div>
                                         </div>
-                                       
+
                                         <div class="col-lg-12 fs-10" style="margin-top:3px;">
-                                            <span>परिचयपत्र नं :- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span>
+                                            <span>परिचयपत्र नं :- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span> <br >
+                                            <span>परिचय पत्रको प्रकार <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span>  </span>
                                             <br>
                                             <span>नाम,थर :- <span style="font-weight: 700">{{ $applicant->full_name_nep }} </span></span>
                                             <br>
                                             <span>ठेगानाः- सुदूरपश्चिम प्रदेश बैतडी जिल्ला दशरथचन्द नगरपालिका वडा नं <span style="font-weight: 700">{{ $applicant->ward_no }}</span></span>
                                             <br>
                                             <div class="row">
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-4" style="width: 33%;">
                                                     <span>जन्म मिति : <span style="font-weight: 700">{{ $applicant->dob_nep }}</span></span>
                                                 </div>
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-4" style="width: 33%;">
                                                     <span>नागरिकता नं : <span style="font-weight: 700">{{ $applicant->citizenship_number }}</span></span>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                   <span>लिङ्ग : <span style="font-weight: 700">
-                                                      {{ 
-                                                        $applicant->sex === "male" ? "पुरुष" : 
-                                                        ($applicant->sex === "female" ? "महिला" : "अन्य")
-                                                    }}
-                                                    </span></span>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <span>रक्त समूह : <span style="font-weight: 700">{{ $applicant->blood_group }}</span></span><br>
+                                                <div class="col-lg-4" style="width: 33%;">
+                                                    <span>लिङ्ग : <span style="font-weight: 700">
+                                                        {{
+                                                          $applicant->sex === "male" ? "पुरुष" :
+                                                          ($applicant->sex === "female" ? "महिला" : "अन्य")
+                                                      }}
+                                                      </span></span>
                                                 </div>
                                             </div>
                                             <span> प्रकृतिको आधारमा <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span> गम्भीरता:- <span>{{ $applicant->disabilitySeverity->name_nepali }}</span></span><br>
                                             <span>बाबु/आमा वा संरक्षकको नाम :- <span style="font-weight: 700">{{ $applicant->guardian }}</span></span><br>
-                                     
+
                                         </div>
-                                        <div class="col-lg-3 mt-2"></div>
+                                        <div class="row fs-10">
+                                            <div class="col-lg-12">
+                                                <span style="text-decoration: underline;"> परिचयपत्र प्रमाणित गर्ने : </span>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <span> नाम,थर </span> <br />
+                                                 <span>{{ $employee->name_nepali }}</span>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <span> हस्ताक्षर </span> <br />
+                                                <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  />
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <span> पद </span> <br />
+                                                 <span>{{ $employee->designation }}</span>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <span> जारी मिति </span> <br />
+                                                 <span>{{ $applicant->approved_date  }}</span>
+                                            </div>
+                                        </div>
                                     </div>
                              </div>
-               
+
            </div>
  </div>
- 
 
 
 
 
 
 
-                         
+
+
 
 
 
 
 @endsection
- 
+
 
 @push('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
