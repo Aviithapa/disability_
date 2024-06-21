@@ -191,7 +191,7 @@
                                         </div>
 
                                         <div class="col-lg-12 fs-10" style="margin-top:3px;">
-                                            <span>परिचयपत्र नं :- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span> <br >
+                                            <span>परिचयपत्र नं :- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->srn, 3, '0', STR_PAD_LEFT) }}</span></span> <br >
                                             <span>परिचय पत्रको प्रकार <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span>  </span>
                                             <br>
                                             <span>नाम,थर :- <span style="font-weight: 700">{{ $applicant->full_name_nep }} </span></span>

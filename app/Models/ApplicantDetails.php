@@ -55,7 +55,8 @@ class ApplicantDetails extends Model
         'disability_type_id',
         'incapacitated_base_disability_type_id',
         'approved_by',
-        'approved_date'
+        'approved_date',
+        'srn'
     ];
 
     public function getProfileImage()

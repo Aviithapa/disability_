@@ -93,6 +93,7 @@
                                        <tr>
                                            <th>S.N.</th>
                                            <th>पूरा नाम</th>
+                                           <th>परिचयपत्र नं</th>
                                            <th>असक्षमता प्रकार</th>
                                            <th>असक्षमता कारण</th>
                                            <th>स्थिति</th>
@@ -107,6 +108,7 @@
                                           @endphp
                                           <tr>
                                           <td>{{ $pageRelativeIndex }}</td>
+                                          <td>{{ str_pad($item->srn, 3, '0', STR_PAD_LEFT) }}</></td>
                                           <td>{{ $item->full_name }}</></td>
                                           <td>{{ isset($item->disability_type_id) ? $item->disability->name_nepali  :'' }}</td>
                                           <td>{{ $item->disability_cause }}</td>

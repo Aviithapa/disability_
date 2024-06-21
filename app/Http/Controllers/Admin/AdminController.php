@@ -26,25 +26,48 @@ class AdminController extends AdminBaseController
     }
 
     public function updateAdmin(UpdateApplicantRequest $request, $id)
-    {
-        $data = $request->all();
-        $data['status'] = 'approved';
-        $data['approved_by'] = Auth::user()->id;
-        $data['approved_date'] = NepaliDate::create(\Carbon\Carbon::now())->toBS();;
-        try {
-            $applicant = $this->applicantController->update($id, $data);
-            if ($applicant == false) {
-                session()->flash('danger', 'Oops! Something went wrong.');
-                return redirect()->back()->withInput();
-            }
-            $this->logs('all_approved', 'approved', $id, 'Disability Type Allocated');
-            session()->flash('success', 'Data has been updated successfully');
-            return redirect()->route('applicant.index');
-        } catch (\Exception $e) {
+{
+    $data = $request->all();
+    $data['status'] = 'approved';
+    $data['approved_by'] = Auth::user()->id;
+    $data['approved_date'] = NepaliDate::create(\Carbon\Carbon::now())->toBS();
+
+    try {
+        // Get the applicant to update
+        $applicant = $this->applicantController->find($id);
+        if ($applicant == false) {
+            session()->flash('danger', 'Applicant not found.');
+            return redirect()->back()->withInput();
+        }
+
+        // Get the highest srn number for the same disability_type_id
+        $maxSrn = \DB::table('applicant_details')
+            ->where('disability_type_id', $data['disability_type_id'])
+            ->max('srn');
+
+
+        // Increment the srn number by 1
+        $newSrn = $maxSrn ? $maxSrn + 1 : 1;
+        $data['srn'] = $newSrn;
+
+
+
+        // Update the applicant with new data
+        $applicant = $this->applicantController->update($id, $data);
+        if ($applicant == false) {
             session()->flash('danger', 'Oops! Something went wrong.');
             return redirect()->back()->withInput();
         }
+
+        $this->logs('all_approved', 'approved', $id, 'Disability Type Allocated');
+        session()->flash('success', 'Data has been updated successfully');
+        return redirect()->route('applicant.index');
+    } catch (\Exception $e) {
+        session()->flash('danger', 'Oops! Something went wrong.');
+        return redirect()->back()->withInput();
     }
+}
+
 
     public function state(HttpRequest $request, $id)
     {

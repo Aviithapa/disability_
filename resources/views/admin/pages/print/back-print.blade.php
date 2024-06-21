@@ -194,7 +194,7 @@
 
 
                                         <div class="col-lg-12 fs-10">
-                                            <span>ID Card No:- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->id, 3, '0', STR_PAD_LEFT) }}</span></span><br />
+                                            <span>ID Card No:- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->srn, 3, '0', STR_PAD_LEFT) }}</span></span><br />
                                             <span>ID Card Type:- <span style="font-weight: 700; text-transform: uppercase;">{{ $applicant->disability->name_english }}</span></span>
                                             <br>
                                             <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span> <br />
