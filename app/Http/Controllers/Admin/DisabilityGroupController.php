@@ -67,7 +67,7 @@ class DisabilityGroupController extends BaseController
             }
             $data = [
                 'state' => 'admin',
-                'status' => 'updated',
+                'status' => 'approved',
                 'created_by' => Auth::user()->id,
                 'remarks' => 'Disability Group Updated Successfully',
                 'applicant_id' => $id
@@ -76,6 +76,7 @@ class DisabilityGroupController extends BaseController
             session()->flash('success', 'Data has been updated successfully');
             return redirect()->route('disability-group.index');
         } catch (\Exception $e) {
+            dd($e);
             session()->flash('danger', 'Oops! Something went wrong.');
             return redirect()->back()->withInput();
         }
