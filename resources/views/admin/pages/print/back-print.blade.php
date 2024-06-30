@@ -214,7 +214,7 @@
                                                 </div>
                                             </div>
 
-                                            <span>Type of disability: on the basis of nature   <span style="font-weight: 700; font-size:12px; text-decoration:underline;">{{ $applicant->disability->name_english }}</span>  on the basis of severity  <span style="font-weight: 700; font-size:12px; text-decoration:underline;">{{ $applicant->disabilitySeverity->name_english }}</span>
+                                            <span>Type of disability: on the basis of nature   <span style="font-weight: 700; font-size:12px; text-decoration:underline;">{{ $applicant->disabilitySeverity->name_english }}</span>  on the basis of severity  <span style="font-weight: 700; font-size:12px; text-decoration:underline;">{{ $applicant->disability->severity_name_english }}</span>
                                           <br>
 
                                         </div>
