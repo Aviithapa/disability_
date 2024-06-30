@@ -15,7 +15,9 @@ class DisabilityType extends Model
         'name_english',
         'points',
         'type',
-        'color'
+        'color',
+        'severity_name_nepali',
+        'severity_name_english'
     ];
 
     public function applicantDetails()

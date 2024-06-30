@@ -50,7 +50,6 @@ class DisabilityGroupController extends BaseController
             session()->flash('success', 'Data has been created successfully');
             return redirect()->route('disability-group.index');
         } catch (\Exception $e) {
-            dd($e);
             session()->flash('danger', 'Oops! Something went wrong.' . $e);
             return redirect()->back()->withInput();
         }

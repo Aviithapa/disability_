@@ -17,11 +17,11 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end page title -->   
+                        <!-- end page title -->
 
-                     
+
                         <div class="row">
-    
+
                             <div class="col-xl-12">
                                 <!-- Todo-->
                                 <div class="card">
@@ -32,9 +32,9 @@
                                             </div>
                                             <h5 class="header-title mb-0">नयाँ असक्षमता प्रकार थप्नुहोस्</h5>
                                         </div>
-    
+
                                         <div id="yearly-sales-collapse" class="collapse show">
-    
+
                                             <div class="table-responsive">
                                                 <table class="table table-nowrap table-hover mb-0">
                                        <thead>
@@ -43,6 +43,8 @@
                                            <th>क्रम संख्या</th>
                                            <th>नेपाली भाषा</th>
                                            <th>अंग्रेजी भाषा</th>
+                                           <th>गम्भीरताको नेपाली भाषाको</th>
+                                           <th>गम्भीरताको अंग्रेजी भाषाको</th>
                                            <th>रंग</th>
                                            <th>कार्य</th>
                                        </tr>
@@ -57,23 +59,25 @@
                                             <td>{{ $item->points }}</></td>
                                             <td>{{ $item->name_nepali }}</td>
                                             <td>{{ $item->name_english }}</td>
-                                            <td>{{ $item->color }}</td>
+                                            <td>{{ $item->severity_name_nepali }}</td>
+                                            <td>{{ $item->severity_name_english }}</td>
+                                            <td>{{ $item->color }}  <div style="background: {{ $item->color }}; height:10px;"> </div></td>
                                             <td><a href="{{ url('dashboard/edit/disability-group/'.$item->id) }}" title="edit"><span class="label label-danger"><i class="bi-pencil"></i></span></a></td>
                                           </tr>
                                           @endforeach
 
 
-                                           
-                                           
+
+
                                        </tbody>
-                                     
+
                                    </table>
                                                    <div style="padding: 10px; float:right;">
                                                 {{  $applicant->appends(request()->query())->links('admin.layout.pagination') }}
                                                 </div>
-                                            </div>        
+                                            </div>
                                         </div>
-                                    </div>                           
+                                    </div>
                                 </div> <!-- end card-->
                             </div> <!-- end col-->
                         </div>

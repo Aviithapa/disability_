@@ -214,7 +214,14 @@
                                                       </span></span>
                                                 </div>
                                             </div>
-                                            <span> प्रकृतिको आधारमा <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span> गम्भीरता:- <span>{{ $applicant->disabilitySeverity->name_nepali }}</span></span><br>
+                                            <div class="row">
+                                                <div class="col-lg-6" style="width: 50%;">
+                                            <span> प्रकृतिको आधारमा : -<span>{{ $applicant->disabilitySeverity->name_nepali }} </span>
+                                                </div>
+                                                <div class="col-lg-6" style="width: 50%;">
+                                             गम्भीरता:- <span>{{ $applicant->disability->severity_name_nepali }}</span></span><br>
+                                            </div>
+                                            </div>
                                             <span>बाबु/आमा वा संरक्षकको नाम :- <span style="font-weight: 700">{{ $applicant->guardian }}</span></span><br>
 
                                         </div>

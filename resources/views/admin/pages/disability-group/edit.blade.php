@@ -29,13 +29,13 @@
                             <div class="card">
 
                                 <div class="card-body">
-                        
-                                   
+
+
                                     <form method="POST" action="{{ route('disability-group.update', ['disability_group' => $data->id]) }}">
                                         @csrf
-                    
-                                        @method('PATCH') 
-                                            
+
+                                        @method('PATCH')
+
                                         <div class="row">
                                              <div class="col-lg-6">
                                                 <fieldset class="form-group">
@@ -81,6 +81,28 @@
                                                  @endif
                                                 </fieldset>
                                             </div>
+                                            <div class="col-lg-6">
+                                                <fieldset class="form-group">
+                                                    <label>गम्भीरताको  नेपाली भाषाको नाम दिनुहोस्</label>
+                                                    <input name="severity_name_nepali" class="form-control" id="basicInput" type="text" value="{{ $data->severity_name_nepali }}">
+                                                 @if($errors->any())
+                                                    <div style="color:red !important">
+                                                        {{ $errors->first('severity_name_nepali') }}
+                                                    </div>
+                                                 @endif
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <fieldset class="form-group">
+                                                    <label>गम्भीरताको अंग्रेजी भाषाको नाम दिनुहोस्</label>
+                                                    <input name="severity_name_english" class="form-control" id="basicInput" value="{{ $data->severity_name_english }}" type="text">
+                                                     @if($errors->any())
+                                                    <div style="color:red !important">
+                                                        {{ $errors->first('severity_name_english') }}
+                                                    </div>
+                                                 @endif
+                                                </fieldset>
+                                            </div>
                                               <div class="col-lg-6">
                                                 <fieldset class="form-group">
                                                     <label>रंग</label>
@@ -94,16 +116,16 @@
                                             </div>
                                         </div>
 
-                                           
-                                       
-                        
+
+
+
                                         <button type="submit" class="btn btn-primary float-right mt-2"><i class="fa fa-check"></i>
                                             Save</button>
-                        
+
                                     </form>
-                        
+
                                 </div>
-                        
+
                             </div>
                            </div>
                        </div>
