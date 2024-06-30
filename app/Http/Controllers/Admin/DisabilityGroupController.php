@@ -60,7 +60,7 @@ class DisabilityGroupController extends BaseController
     {
         $data = $request->all();
         try {
-            $applicant = $this->disabilityTypeRepository->update($data, $id);
+            $applicant = $this->disabilityTypeRepository->update( $id, $data);
             if ($applicant == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
