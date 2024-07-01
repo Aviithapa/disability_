@@ -195,7 +195,7 @@
                                         </div>
                                         <div class="col-lg-3" style="height:20vh; margin-top:5px;">
                                             <div class="img-container">
-                                                <img src="{{ $applicant->getProfileImage() }}" alt="" height="100" >
+                                                <img src="{{ $applicant->getProfileImage() }}" alt="" height="100" style="object-fit: contain" >
                                             </div>
                                         </div>
                                         <div class="col-lg-12" style="padding: 0px 69px; margin-top:8px;">
@@ -273,11 +273,11 @@
                                                 <span> हस्ताक्षर </span> <br />
                                                 <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="15px"  />
                                             </div>
-                                            <div class="col-lg-4" style="text-align: center;">
+                                            <div class="col-lg-4" style="text-align: center; margin-left: 2px">
                                                 <span> पद </span> <br />
                                                  <span style="font-size: 8px;">{{ $employee->designation }}</span>
                                             </div>
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-2">
                                                 <span> जारी मिति </span> <br />
                                                  <span style="font-size: 8px;">{{ $applicant->approved_date  }}</span>
                                             </div>
