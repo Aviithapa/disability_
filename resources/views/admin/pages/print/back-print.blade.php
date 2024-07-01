@@ -169,11 +169,11 @@
                                         <div class="nepali-card a4-size id-card page" style="height: 100vh; padding:2px;">
                                   <div class="row">
                                      <div class="col-lg-3 align-item-center">
-                                             <img src="{{ asset('assets/images/district.jpeg') }}" alt="" height="50" />
+                                             <img src="{{ asset('assets/images/district.jpeg') }}" alt="" height="30" />
                                         </div>
                                         <div class="col-lg-6 fs-10" style="position: relative; display:flex; justify-content:center;">
                                               <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:60%; transform:translate(-50%);">
-                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
+                                                <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="30" />
                                             </div>
                                             <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; ">
                                                 <br>Dasharathchand Municipality, <br />  Office of Executive Municipal <br /> Gadi, Baitadi
@@ -181,11 +181,11 @@
                                         </div>
                                         <div class="col-lg-3" style="height:20vh; margin-top:5px;">
                                             <div class="img-container">
-                                                {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(50)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
+                                                {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(30)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
 
                                             </div>
                                         </div>
-                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:10px;">
+                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:5px;">
                                             <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; height:8vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                                                               DISABILITY IDENTITY CARD
 
@@ -194,28 +194,60 @@
 
 
                                         <div class="col-lg-12 fs-10">
+                                                <div class="row">
+                                                    <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                             <span>ID Card No:- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->srn, 3, '0', STR_PAD_LEFT) }}</span></span><br />
+
+                                                    </div>
+                                                    <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                             <span>ID Card Type:- <span style="font-weight: 700; text-transform: uppercase;">{{ $applicant->disability->name_english }}</span></span>
-                                            <br>
+
+                                                    </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                             <span>Full Name :- <span style="font-weight: 700">{{ $applicant->full_name }}</span></span> <br />
+
+
+                                                </div>
+                                                <div class="col-lg-6" style="width: 50%; font-size: 8px;">
+                                                    <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span> <br />
+
+
+                                                </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                             <span>Address :- Sudurpashchim Province Baitadi District Dasharathchand MP ward no <span style="font-weight: 700">{{ $applicant->ward_no }}</span></span>
+
+                                            </div>
+                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
+                                                <span>Sex : <span style="font-weight: 700">{{ $applicant->sex  }}</span></span> <br />
+                                            </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6" style="width: 50%; font-size: 8px;">
+                                    <span> Type of disability: on the basis of nature : -<span>{{ $applicant->disabilitySeverity->name_english }} </span>
+                                        </div>
+                                        <div class="col-lg-6" style="width: 50%; font-size: 8px;">
+                                            on the basis of severity :- <span>{{ $applicant->disability->severity_name_english }}</span></span><br>
+                                    </div>
+                                    </div>
+
                                               <div class="row">
                                                 <div class="col-lg-3">
-                                                    <span>Date of birth : <span style="font-weight: 700">{{ $applicant->dob_eng }}</span></span> <br />
                                                 </div>
                                                 <div class="col-lg-3">
                                                     <span>Citizenship No. : <span style="font-weight: 700">{{ $applicant->citizenship_number }}</span></span>
                                                 </div>
                                                 <div class="col-lg-3">
-                                                    <span>Sex : <span style="font-weight: 700">{{ $applicant->sex  }}</span></span> <br />
                                                 </div>
                                                 <div class="col-lg-3">
                                                     <span>Blood Group : <span style="font-weight: 700">{{ $applicant->blood_group }}</span></span>
                                                 </div>
                                             </div>
 
-                                            <span>Type of disability: on the basis of nature   <span style="font-weight: 700; font-size:12px; text-decoration:underline;">{{ $applicant->disabilitySeverity->name_english }}</span>  on the basis of severity  <span style="font-weight: 700; font-size:12px; text-decoration:underline;">{{ $applicant->disability->severity_name_english }}</span>
-                                          <br>
 
                                         </div>
                                         <div class="row fs-10">
