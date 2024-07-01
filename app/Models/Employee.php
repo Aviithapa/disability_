@@ -21,6 +21,7 @@ class Employee extends Model
         'status',
         'photo',
         'user_id',
+        'designation_english'
     ];
 
     public function getProfileImage()

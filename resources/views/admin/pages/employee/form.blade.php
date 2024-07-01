@@ -6,7 +6,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
         <h3></h3>
-        
+
     </div>
 
            <!-- Main content -->
@@ -18,7 +18,7 @@
                            <div class="box-header with-border p-t-1" style="text-align: center">
                             <h4 class="text-black" style="font-family:PreetiNormal">
                                  @if(isset($employee))
-                                Create 
+                                Create
                                 @else
                                  Update
                                 @endif
@@ -32,7 +32,7 @@
                             <div class="card">
 
                                 <div class="card-body">
-                        
+
 
                                     @if(isset($employee))
                                     <form method="POST" action="{{ route('employee.update', ['employee' => $employee->id]) }}">
@@ -41,9 +41,9 @@
                                         <form method="POST" action="{{ route('employee.store') }}"
                                     @endif
                                         @csrf
-                    
-                                       
-                                            
+
+
+
                                         <div class="row">
                                              <div class="col-lg-6">
                                                 <fieldset class="form-group">
@@ -89,6 +89,17 @@
                                                     @endif
                                                 </fieldset>
                                             </div>
+                                            <div class="col-lg-6">
+                                                <fieldset class="form-group">
+                                                    <label>Designation English</label>
+                                                    <input name="designation_english" class="form-control" id="basicInput" type="text" value="{{ isset($employee) ? $employee->designation_english : ''}}">
+                                                    @if($errors->any())
+                                                        <div style="color:red !important">
+                                                            {{ $errors->first('designation_english') }}
+                                                        </div>
+                                                    @endif
+                                                </fieldset>
+                                            </div>
                                              <div class="col-lg-6">
                                                 <fieldset class="form-group">
                                                     <label>Status</label>
@@ -103,10 +114,10 @@
                                                         </div>
                                                     @endif
                                                 </fieldset>
-                                            </div>                                          	
+                                            </div>
                                         </div>
                                          <div class="row" style="display: flex; justify-content:space-between;">
-                                            
+
                                             <div class="col-lg-3">
                                                 <div class="grid-body">
                                                     <div class="row">
@@ -116,13 +127,13 @@
                                                                 @if(isset($employee))
                                                                     <img src="{{url(isset($employee)?$employee->getProfileImage():imageNotFound())}}" height="150" width="150"
                                                                          id="photo_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($employee)?$employee->getProfileImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="photo_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="photo_help_text" class="help-block"></small>
@@ -156,13 +167,13 @@
                                                                 @if(isset($employee))
                                                                     <img src="{{url(isset($employee)?$employee->getRedSignatureImage():imageNotFound())}}" height="150" width="150"
                                                                          id="red_signature_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($employee)?$employee->getRedSignatureImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="red_signature_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="red_signature_help_text" class="help-block"></small>
@@ -196,13 +207,13 @@
                                                                 @if(isset($employee))
                                                                     <img src="{{url(isset($employee)?$employee->getBlackSignatureImage():imageNotFound())}}" height="150" width="150"
                                                                          id="black_signature_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($employee)?$employee->getBlackSignatureImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="black_signature_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="black_signature_help_text" class="help-block"></small>
@@ -236,13 +247,13 @@
                                                                 @if(isset($employee))
                                                                     <img src="{{url(isset($employee)?$employee->getStampImage():imageNotFound())}}" height="150" width="150"
                                                                          id="stamp_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($employee)?$employee->getStampImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="stamp_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="stamp_help_text" class="help-block"></small>
@@ -268,18 +279,18 @@
                                                 </div>
                                             </div>
                                          </div>
-                                            
 
-                                           
-                                       
-                        
+
+
+
+
                                         <button type="submit" class="btn btn-primary float-right mt-2"><i class="fa fa-check"></i>
                                             Save</button>
-                        
+
                                     </form>
-                        
+
                                 </div>
-                        
+
                             </div>
                            </div>
                        </div>
@@ -345,7 +356,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
         <h3></h3>
-        
+
     </div>
 
            <!-- Main content -->
@@ -366,13 +377,13 @@
                             <div class="card">
 
                                 <div class="card-body">
-                        
-                                   
+
+
                                     <form method="POST" action="{{ route('employee.store') }}">
                                         @csrf
-                    
-                                       
-                                            
+
+
+
                                         <div class="row">
                                              <div class="col-lg-6">
                                                 <fieldset class="form-group">
@@ -432,10 +443,10 @@
                                                         </div>
                                                     @endif
                                                 </fieldset>
-                                            </div>                                          	
+                                            </div>
                                         </div>
                                          <div class="row" style="display: flex; justify-content:space-between;">
-                                            
+
                                             <div class="col-lg-3">
                                                 <div class="grid-body">
                                                     <div class="row">
@@ -445,13 +456,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getProfileImage():imageNotFound())}}" height="150" width="150"
                                                                          id="photo_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getProfileImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="photo_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="photo_help_text" class="help-block"></small>
@@ -485,13 +496,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getRedSignatureImage():imageNotFound())}}" height="150" width="150"
                                                                          id="red_signature_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getRedSignatureImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="red_signature_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="red_signature_help_text" class="help-block"></small>
@@ -525,13 +536,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getBlackSignatureImage():imageNotFound())}}" height="150" width="150"
                                                                          id="black_signature_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getBlackSignatureImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="black_signature_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="black_signature_help_text" class="help-block"></small>
@@ -565,13 +576,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getStampImage():imageNotFound())}}" height="150" width="150"
                                                                          id="stamp_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getStampImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="stamp_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="stamp_help_text" class="help-block"></small>
@@ -597,18 +608,18 @@
                                                 </div>
                                             </div>
                                          </div>
-                                            
 
-                                           
-                                       
-                        
+
+
+
+
                                         <button type="submit" class="btn btn-primary float-right mt-2"><i class="fa fa-check"></i>
                                             Save</button>
-                        
+
                                     </form>
-                        
+
                                 </div>
-                        
+
                             </div>
                            </div>
                        </div>
