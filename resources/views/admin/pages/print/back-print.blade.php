@@ -252,7 +252,7 @@
 
                                             </div>
                                             <div class="col-lg-6" style="text-align: center;">
-                                                <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px" style="margin-left: 10%;" /> <br />
+                                                <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px" /> <br />
                                                 <span style="font-size: 8px;">{{ $employee->name_english }}</span> <br />
                                                 <span style="font-size: 8px;">{{ $employee->designation }}</span> <br />
                                                 <span style="font-size: 8px;">Date : {{ $applicant->approved_date  }}</span>
