@@ -175,7 +175,7 @@
                                               <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:40%; transform:translate(-50%);">
                                                 <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                             </div>
-                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; font-size: 10px !important; margin-top:-5px; ">
+                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; font-size: 10px !important; margin-top:-10px; ">
                                                 <br>Dasharathchand Municipality, <br />  Office of Executive Municipal <br /> Gadi, Baitadi
                                             </div>
                                         </div>
@@ -247,16 +247,15 @@
                                             <div class="col-lg-12">
                                                 <span style="text-decoration: underline; font-size: 8px; font-weight:700;"> ID CARD CERTIFYING OFFICIAL  : </span>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-6" >
 
-                                                 <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px" style="margin-left: 10%;" /> <br />
-                                                 <span style="font-size: 8px;">{{ $employee->name_english }}</span> <br />
-                                                 <span style="font-size: 8px;">{{ $employee->designation }}</span> <br />
-                                                 <span style="font-size: 8px;">{{ $applicant->approved_date  }}</span>
+
                                             </div>
-                                            <div class="col-lg-6">
-
-
+                                            <div class="col-lg-6" style="text-align: center;">
+                                                <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px" style="margin-left: 10%;" /> <br />
+                                                <span style="font-size: 8px;">{{ $employee->name_english }}</span> <br />
+                                                <span style="font-size: 8px;">{{ $employee->designation }}</span> <br />
+                                                <span style="font-size: 8px;">Date : {{ $applicant->approved_date  }}</span>
                                             </div>
                                             {{-- <div class="col-lg-3">
                                                 <span> Signature </span> <br />
