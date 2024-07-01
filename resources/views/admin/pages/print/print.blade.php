@@ -199,7 +199,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-12" style="padding: 0px 69px; margin-top:15px;">
-                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; height:6vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
+                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; font-size: 12px; height:6vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                अपाङ्गता परिचय पत्र
                                             </div>
                                         </div>
