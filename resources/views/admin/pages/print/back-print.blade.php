@@ -172,21 +172,21 @@
                                              <img src="{{ asset('assets/images/district.jpeg') }}" alt="" height="30" />
                                         </div>
                                         <div class="col-lg-6 fs-10" style="position: relative; display:flex; justify-content:center;">
-                                              <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:60%; transform:translate(-50%);">
+                                              <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:40%; transform:translate(-50%);">
                                                 <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                             </div>
-                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; ">
+                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; font-size: 12px; ">
                                                 <br>Dasharathchand Municipality, <br />  Office of Executive Municipal <br /> Gadi, Baitadi
                                             </div>
                                         </div>
                                         <div class="col-lg-3" style="height:20vh; margin-top:5px;">
                                             <div class="img-container">
-                                                {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(50)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
+                                                {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(40)->generate('Name : '.$applicant->full_name. 'Severity of Disability'  . $applicant->disabilitySeverity->name_english. 'Nature of Disability' . $applicant->disability->name_english )!!}
 
                                             </div>
                                         </div>
                                         <div class="col-lg-12" style="padding: 0px 69px; margin-top:12px;">
-                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; height:8vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
+                                            <div class="identity col-lg-12  b-600" style="color: #fff; font-size:16px; height:6vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                                                               DISABILITY IDENTITY CARD
 
                                             </div>
