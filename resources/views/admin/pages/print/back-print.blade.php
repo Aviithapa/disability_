@@ -244,11 +244,14 @@
 
                                         </div>
                                         <div class="row fs-10">
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-12">
                                                 <span> Name </span> <br />
-                                                 <span style="font-size: 8px;">{{ $employee->name_english }}</span>
+                                                 <span style="font-size: 8px;">{{ $employee->name_english }}</span> <br />
+                                                <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /> <br />
+                                                <span style="font-size: 8px;">{{ $employee->designation }}</span> <br />
+                                                <span style="font-size: 8px;">{{ $applicant->approved_date  }}</span>
                                             </div>
-                                            <div class="col-lg-3">
+                                            {{-- <div class="col-lg-3">
                                                 <span> Signature </span> <br />
                                                 <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  />
                                             </div>
@@ -259,7 +262,7 @@
                                             <div class="col-lg-3">
                                                 <span> Date </span> <br />
                                                  <span style="font-size: 8px;">{{ $applicant->approved_date  }}</span>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
 
