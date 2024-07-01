@@ -198,7 +198,7 @@
                                                 <img src="{{ $applicant->getProfileImage() }}" alt="" height="100" >
                                             </div>
                                         </div>
-                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:15px;">
+                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:8px;">
                                             <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; font-size: 12px; height:8vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                अपाङ्गता परिचय पत्र
                                             </div>
@@ -273,7 +273,7 @@
                                                 <span> हस्ताक्षर </span> <br />
                                                 <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="15px"  />
                                             </div>
-                                            <div class="col-lg-4">
+                                            <div class="col-lg-4" style="text-align: center;">
                                                 <span> पद </span> <br />
                                                  <span style="font-size: 8px;">{{ $employee->designation }}</span>
                                             </div>
