@@ -245,9 +245,15 @@
                                         </div>
                                         <div class="row fs-10">
                                             <div class="col-lg-12">
-                                                <span> Name </span> <br />
+                                                <span style="text-decoration: underline; font-size: 8px; font-weight:700;"> ID CARD CERTIFYING OFFICIAL  : </span>
+                                            </div>
+                                            <div class="col-lg-6">
+
+                                                 <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /> <br />
                                                  <span style="font-size: 8px;">{{ $employee->name_english }}</span> <br />
-                                                <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="20px"  /> <br />
+                                            </div>
+                                            <div class="col-lg-6">
+
                                                 <span style="font-size: 8px;">{{ $employee->designation }}</span> <br />
                                                 <span style="font-size: 8px;">{{ $applicant->approved_date  }}</span>
                                             </div>
