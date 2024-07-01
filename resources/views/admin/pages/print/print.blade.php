@@ -206,18 +206,18 @@
 
                                         <div class="col-lg-12 fs-10" style="margin-top:3px;">
                                             <div class="row">
-                                                <div class="col-lg-6" style="width: 50%;">
+                                                <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                             <span>परिचयपत्र नं :- <span style="font-weight: 700; text-transform: uppercase;">{{ str_pad($applicant->srn, 3, '0', STR_PAD_LEFT) }}</span></span>
                                                 </div>
-                                                <div class="col-lg-6" style="width: 50%;">
+                                                <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                             <span>परिचय पत्रको प्रकार <span style="font-weight: 700; font-size:16px; marginRight:5px;">{{ $applicant->disability->name_nepali }}</span>  </span>
                                                 </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6" style="width: 50%;">
+                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                                 <span>नाम,थर :- <span style="font-weight: 700">{{ $applicant->full_name_nep }} </span></span>
                                             </div>
-                                            <div class="col-lg-6" style="width: 50%;">
+                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                                 <span>जन्म मिति : <span style="font-weight: 700">{{ $applicant->dob_nep }}</span></span>
                                             </div>
                                         </div>
@@ -226,7 +226,7 @@
                                             <div class="col-lg-6" style="width: 50%;">
                                                 <span style="font-size: 8px;">ठेगानाः- सुदूरपश्चिम प्रदेश बैतडी जिल्ला दशरथचन्द नगरपालिका वडा नं <span style="font-weight: 700">{{ $applicant->ward_no }}</span></span>
                                             </div>
-                                            <div class="col-lg-6" style="width: 50%;">
+                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                                 <span>लिङ्ग : <span style="font-weight: 700">
                                                     {{
                                                       $applicant->sex === "male" ? "पुरुष" :
@@ -237,10 +237,10 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6" style="width: 50%;">
+                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                         <span> प्रकृतिको आधारमा : -<span>{{ $applicant->disabilitySeverity->name_nepali }} </span>
                                             </div>
-                                            <div class="col-lg-6" style="width: 50%;">
+                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                          गम्भीरता:- <span>{{ $applicant->disability->severity_name_nepali }}</span></span><br>
                                         </div>
                                         </div>
@@ -249,10 +249,10 @@
 
 
                                             <div class="row">
-                                                <div class="col-lg-6" style="width: 50%;">
+                                                <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                                     <span>बाबु/आमा वा संरक्षकको नाम :- <span style="font-weight: 700">{{ $applicant->guardian }}</span></span><br>
                                                 </div>
-                                                <div class="col-lg-6" style="width: 50%;">
+                                                <div class="col-lg-6" style="width: 50%; font-size: 8px;">
                                                     <span>नागरिकता नं : <span style="font-weight: 700">{{ $applicant->citizenship_number }}</span></span>
                                                 </div>
 
@@ -265,7 +265,7 @@
                                             <div class="col-lg-12">
                                                 <span style="text-decoration: underline; font-size: 8px; font-weight:700;"> परिचयपत्र प्रमाणित गर्ने : </span>
                                             </div>
-                                            <div class="col-lg-4" >
+                                            <div class="col-lg-3" >
                                                 <span> नाम,थर </span> <br />
                                                  <span style="font-size: 8px;">{{ $employee->name_nepali }}</span>
                                             </div>
