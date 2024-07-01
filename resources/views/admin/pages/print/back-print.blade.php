@@ -175,7 +175,7 @@
                                               <div class="col-lg-5" style="position: absolute; z-index:1; top:0; left:40%; transform:translate(-50%);">
                                                 <img src="{{isset($employee) ? $employee->getStampImage() : "" }}"  alt="stamp" height="50" />
                                             </div>
-                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; font-size: 12px; ">
+                                            <div class="text-center b-600"  style="color: red;  z-index:100; position: absolute; font-size: 10px !important; margin-top:-5px; ">
                                                 <br>Dasharathchand Municipality, <br />  Office of Executive Municipal <br /> Gadi, Baitadi
                                             </div>
                                         </div>
@@ -185,8 +185,8 @@
 
                                             </div>
                                         </div>
-                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:12px;">
-                                            <div class="identity col-lg-12  b-600" style="color: #fff; font-size:16px; height:6vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
+                                        <div class="col-lg-12" style="padding: 0px 60px; margin-top:12px;">
+                                            <div class="identity col-lg-12  b-600" style="color: #fff; font-size:8px; height:6vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                                                               DISABILITY IDENTITY CARD
 
                                             </div>
