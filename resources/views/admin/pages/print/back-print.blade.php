@@ -185,7 +185,7 @@
 
                                             </div>
                                         </div>
-                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:5px;">
+                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:10px;">
                                             <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; height:8vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                                                               DISABILITY IDENTITY CARD
 
@@ -217,37 +217,30 @@
                                                 </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
+                                            <div class="col-lg-6" style="width: 100%; font-size: 8px;">
                                             <span>Address :- Sudurpashchim Province Baitadi District Dasharathchand MP ward no <span style="font-weight: 700">{{ $applicant->ward_no }}</span></span>
 
                                             </div>
-                                            <div class="col-lg-6" style="width: 50%; font-size: 8px;">
-                                                <span>Sex : <span style="font-weight: 700">{{ $applicant->sex  }}</span></span> <br />
-                                            </div>
+
                                     </div>
 
                                     <div class="row">
+                                    <div class="col-lg-6" style="width: 50%; font-size: 8px;">
+                                        <span>Sex : <span style="font-weight: 700">{{ $applicant->sex  }}</span></span> <br />
+                                    </div>
+                                    <div class="col-lg-6" style="width: 50%; font-size: 8px;">
+
+                                            <span>Citizenship No. : <span style="font-weight: 700">{{ $applicant->citizenship_number }}</span></span>
+                                    </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-lg-6" style="width: 50%; font-size: 8px;">
-                                    <span> Type of disability: on the basis of nature : -<span>{{ $applicant->disabilitySeverity->name_english }} </span>
+                                    <span> Type of disability : -<span>{{ $applicant->disabilitySeverity->name_english }} </span>
                                         </div>
                                         <div class="col-lg-6" style="width: 50%; font-size: 8px;">
-                                            on the basis of severity :- <span>{{ $applicant->disability->severity_name_english }}</span></span><br>
+                                            Severity :- <span>{{ $applicant->disability->severity_name_english }}</span></span><br>
                                     </div>
                                     </div>
-
-                                              <div class="row">
-                                                <div class="col-lg-3">
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <span>Citizenship No. : <span style="font-weight: 700">{{ $applicant->citizenship_number }}</span></span>
-                                                </div>
-                                                <div class="col-lg-3">
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <span>Blood Group : <span style="font-weight: 700">{{ $applicant->blood_group }}</span></span>
-                                                </div>
-                                            </div>
-
 
                                         </div>
                                         <div class="row fs-10">
