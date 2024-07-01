@@ -198,7 +198,7 @@
                                                 <img src="{{ $applicant->getProfileImage() }}" alt="" height="100" style="object-fit: contain" >
                                             </div>
                                         </div>
-                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:8px;">
+                                        <div class="col-lg-12" style="padding: 0px 69px; margin-top:5px;">
                                             <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; font-size: 12px; height:8vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                अपाङ्गता परिचय पत्र
                                             </div>
@@ -277,7 +277,7 @@
                                                 <span> पद </span> <br />
                                                  <span style="font-size: 8px;">{{ $employee->designation }}</span>
                                             </div>
-                                            <div class="col-lg-2">
+                                            <div class="col-lg-3">
                                                 <span> जारी मिति </span> <br />
                                                  <span style="font-size: 8px;">{{ $applicant->approved_date  }}</span>
                                             </div>
