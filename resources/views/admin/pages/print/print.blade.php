@@ -193,13 +193,13 @@
                                                  दशरथचन्द नगरपालिका <br>नगर कार्यपालिका कार्यालय  <br/>बैतडी
                                             </div>
                                         </div>
-                                        <div class="col-lg-3" style="height:15vh; margin-top:5px;">
+                                        <div class="col-lg-3" style="height:20vh; margin-top:5px;">
                                             <div class="img-container">
                                                 <img src="{{ $applicant->getProfileImage() }}" alt="" height="100" >
                                             </div>
                                         </div>
                                         <div class="col-lg-12" style="padding: 0px 69px; margin-top:15px;">
-                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; font-size: 12px; height:6vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
+                                            <div class="identity col-lg-12 fs-12 b-600" style="color: #fff; font-size: 12px; height:8vh; align-item: center; background :  @if($applicant->disability_type_id) {{ $applicant->disability->color }}  @else none; @endif">
                                                अपाङ्गता परिचय पत्र
                                             </div>
                                         </div>
@@ -273,7 +273,7 @@
                                                 <span> हस्ताक्षर </span> <br />
                                                 <img src="{{   $employee->getRedSignatureImage() }}"  alt="red-signature" height="15px"  />
                                             </div>
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-4">
                                                 <span> पद </span> <br />
                                                  <span style="font-size: 8px;">{{ $employee->designation }}</span>
                                             </div>
