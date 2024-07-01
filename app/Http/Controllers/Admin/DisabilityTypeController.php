@@ -64,7 +64,7 @@ class DisabilityTypeController extends BaseController
             }
             $data = [
                 'state' => 'admin',
-                'status' => 'new',
+                'status' => 'approved',
                 'created_by' => Auth::user()->id,
                 'remarks' => 'New Disability Type',
                 'applicant_id' => $id

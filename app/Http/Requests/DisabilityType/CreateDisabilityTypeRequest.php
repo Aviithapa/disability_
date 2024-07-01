@@ -16,8 +16,6 @@ class CreateDisabilityTypeRequest extends FormRequest
             'points' => 'required|string',
             'type' => 'required|string',
             'color' => 'string',
-            'severity_name_nepali' => 'required|string',
-            'severity_name_english' => 'required|string',
         ];
     }
 }
