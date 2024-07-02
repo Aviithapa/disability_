@@ -282,8 +282,14 @@
                                                             <div class="col-md-12 col-lg-12">
                                                                 <label>Ward Photo *</label><br>
                                                                 @if(isset($data))
-                                                                    <img src="{{url(isset($data)?$data->getWardRecommendationImage():imageNotFound())}}" height="150" width="150"
-                                                                         id="ward_img">
+
+                                                                    @if (pathinfo($data->getWardRecommendationImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                        <a href="{{ $data->getWardRecommendationImage()}}" target="_blank">
+                                                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                        </a>
+                                                                    @else
+                                                                        <img style="cursor: pointer;" src="{{ $data->getWardRecommendationImage() }}" onclick="onClick(this)" alt="Ward Recommendation" width="200" height="200">
+                                                                    @endif
 
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getWardRecommendationImage():imageNotFound('user')}}" height="150" width="150"
@@ -324,8 +330,14 @@
                                                             <div class="col-md-12 col-lg-12">
                                                                 <label>Doctor Report *</label><br>
                                                                 @if(isset($data))
-                                                                    <img src="{{url(isset($data)?$data->getHealthExaminationImage():imageNotFound())}}" height="150" width="150"
-                                                                         id="health_img">
+                                                                    @if (pathinfo($data->getHealthExaminationImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                        <a href="{{ $data->getHealthExaminationImage()}}" target="_blank">
+                                                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                        </a>
+                                                                    @else
+                                                                        <img style="cursor: pointer;" src="{{ $data->getHealthExaminationImage() }}" onclick="onClick(this)" alt="Ward Recommendation" width="200" height="200">
+                                                                    @endif
+
 
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getHealthExaminationImage():imageNotFound('user')}}" height="150" width="150"
@@ -366,8 +378,13 @@
                                                             <div class="col-md-12 col-lg-12">
                                                                 <label>Citizenship Photo *</label><br>
                                                                 @if(isset($data))
-                                                                    <img src="{{url(isset($data)?$data->getCitizenshipImage():imageNotFound())}}" height="150" width="150"
-                                                                         id="citizenship_img">
+                                                                     @if (pathinfo($data->getCitizenshipImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                        <a href="{{ $data->getCitizenshipImage() }}" target="_blank">
+                                                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                        </a>
+                                                                    @else
+                                                                        <img style="cursor: pointer;" src="{{ $data->getCitizenshipImage() }}" onclick="onClick(this)" alt="Ward Recommendation" width="200" height="200">
+                                                                    @endif
 
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getCitizenshipImage():imageNotFound('user')}}" height="150" width="150"
