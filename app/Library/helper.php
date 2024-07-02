@@ -170,3 +170,21 @@ if (!function_exists('getDisabilityName')) {
     }
 }
 
+
+if (!function_exists('convertNepaliToEnglish')) {
+    /**
+     * Convert Nepali numbers to English numbers, preserving special characters.
+     *
+     * @param string $nepaliNumber
+     * @return string
+     */
+    function convertNepaliToEnglish($nepaliNumber)
+    {
+        $nepaliDigits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+        $englishDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+        // Use str_replace to replace Nepali digits with English digits
+        return str_replace($nepaliDigits, $englishDigits, $nepaliNumber);
+    }
+}
+
