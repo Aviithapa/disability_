@@ -29,12 +29,12 @@
                             <div class="card">
 
                                 <div class="card-body">
-                        
-                                   
+
+
                                     <form method="POST" action="{{ route('applicant.update', ['applicant' => $data->id]) }}" style="padding:20px;">
                                         @csrf
                                         @method('PUT')
-                    
+
                                          <div class="row" style="display: flex; justify-content:space-between;">
                                               <div class="col-lg-6">
                                               </div>
@@ -47,13 +47,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getProfileImage():imageNotFound())}}" height="150" width="150"
                                                                          id="transcript_tslc_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getProfileImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="transcript_tslc_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="transcript_tslc_help_text" class="help-block"></small>
@@ -75,7 +75,7 @@
                                                 </div>
                                             </div>
                                          </div>
-                                            
+
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <fieldset class="form-group">
@@ -256,7 +256,7 @@
                                                 <fieldset class="form-group">
                                                     <label>शैक्षिक योग्यता</label>
                                                     <input class="form-control" name="education_level" value="{{ $data->education_level }}"/>
-                                                       
+
                                                 </fieldset>
                                             </div>
                                             <div class="col-lg-12">
@@ -274,7 +274,7 @@
                                         </div>
 
                                            <div class="row" style="display: flex; justify-content:space-between;">
-                                              
+
                                             <div class="col-lg-3">
                                                 <div class="grid-body">
                                                     <div class="row">
@@ -282,15 +282,20 @@
                                                             <div class="col-md-12 col-lg-12">
                                                                 <label>Ward Photo *</label><br>
                                                                 @if(isset($data))
-                                                                    <img src="{{url(isset($data)?$data->getWardRecommendationImage():imageNotFound())}}" height="150" width="150"
-                                                                         id="ward_img">
-                            
+                                                                @if (pathinfo($data->getWardRecommendationImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                    <a href="{{ $data->getWardRecommendationImage()}}" target="_blank">
+                                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                    </a>
+                                                                @else
+                                                                    <img style="cursor: pointer;" src="{{ $data->getWardRecommendationImage() }}" onclick="onClick(this)" alt="Ward Recommendation" width="200" height="200">
+                                                                @endif
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getWardRecommendationImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="ward_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="ward_help_text" class="help-block"></small>
@@ -319,15 +324,20 @@
                                                             <div class="col-md-12 col-lg-12">
                                                                 <label>Doctor Report *</label><br>
                                                                 @if(isset($data))
-                                                                    <img src="{{url(isset($data)?$data->getHealthExaminationImage():imageNotFound())}}" height="150" width="150"
-                                                                         id="health_img">
-                            
+                                                                    @if (pathinfo($data->getHealthExaminationImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                        <a href="{{ $data->getHealthExaminationImage()}}" target="_blank">
+                                                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                        </a>
+                                                                    @else
+                                                                        <img style="cursor: pointer;" src="{{ $data->getHealthExaminationImage() }}" onclick="onClick(this)" alt="Ward Recommendation" width="200" height="200">
+                                                                    @endif
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getHealthExaminationImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="health_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="health_help_text" class="help-block"></small>
@@ -356,15 +366,20 @@
                                                             <div class="col-md-12 col-lg-12">
                                                                 <label>Citizenship Photo *</label><br>
                                                                 @if(isset($data))
-                                                                    <img src="{{url(isset($data)?$data->getCitizenshipImage():imageNotFound())}}" height="150" width="150"
-                                                                         id="citizenship_img">
-                            
+                                                                @if (pathinfo($data->getCitizenshipImage(), PATHINFO_EXTENSION) === 'pdf')
+                                                                    <a href="{{ $data->getCitizenshipImage() }}" target="_blank">
+                                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/391px-PDF_file_icon.svg.png" alt="PDF Icon" width="200" height="200">
+                                                                    </a>
+                                                                @else
+                                                                    <img style="cursor: pointer;" src="{{ $data->getCitizenshipImage() }}" onclick="onClick(this)" alt="Ward Recommendation" width="200" height="200">
+                                                                @endif
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getCitizenshipImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="citizenship_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="citizenship_help_text" class="help-block"></small>
@@ -395,13 +410,13 @@
                                                                 @if(isset($data))
                                                                     <img src="{{url(isset($data)?$data->getFullSizeImage():imageNotFound())}}" height="150" width="150"
                                                                          id="full_size_img">
-                            
+
                                                                 @else
                                                                     <img src="{{isset($data)?$data->getFullSizeImage():imageNotFound('user')}}" height="150" width="150"
                                                                          id="full_size_img">
                                                                 @endif
                                                             </div>
-                            
+
                                                             <div class="form-group col-md-12 col-lg-12">
                                                                 <small>Below 1 mb</small><br>
                                                                 <small id="full_size_help_text" class="help-block"></small>
@@ -423,15 +438,15 @@
                                                 </div>
                                             </div>
                                          </div>
-                                       
-                        
+
+
                                         <button type="submit" class="btn btn-primary float-right mt-2"><i class="fa fa-check"></i>
                                             Save</button>
-                        
+
                                     </form>
-                        
+
                                 </div>
-                        
+
                             </div>
                            </div>
                        </div>
